@@ -8,35 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Portfolio Design System - Warm Creative Palette */
+    --background: 35 25% 92%; /* #edece5 - warm beige */
+    --background-alt: 75 25% 97%; /* #f8f9f2 - light sage */
+    --foreground: 25 25% 35%; /* #916242 - warm brown */
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 25 25% 35%;
+    --card-hover: 35 35% 95%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 25 25% 35%;
+    
+    --primary: 25 25% 35%; /* #916242 - main text */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 25 35% 25%;
+    
+    --secondary: 75 25% 97%; /* #f8f9f2 - light sage */
+    --secondary-foreground: 25 25% 35%;
+    --secondary-hover: 75 35% 92%;
+    
+    --accent: 45 45% 75%; /* warm golden accent */
+    --accent-foreground: 25 25% 25%;
+    --accent-hover: 45 55% 65%;
+    
+    --muted: 35 15% 85%;
+    --muted-foreground: 25 15% 55%;
+    
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 35 15% 85%;
+    --input: 35 15% 90%;
+    --ring: 25 25% 35%;
+    
+    /* Creative gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--background-alt)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card-hover)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-hover)));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 8px 32px -8px hsl(var(--primary) / 0.15);
+    --shadow-hover: 0 12px 40px -8px hsl(var(--primary) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +120,48 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground scroll-smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Portfolio-specific component styles */
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 py-16;
+  }
+  
+  .hero-text {
+    @apply text-4xl md:text-6xl font-bold leading-tight;
+  }
+  
+  .project-card {
+    @apply bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-hover;
+    @apply transition-all duration-300 hover:scale-[1.02] hover:bg-card-hover;
+  }
+  
+  .skill-tag {
+    @apply bg-accent text-accent-foreground px-4 py-2 rounded-full;
+    @apply hover:bg-accent-hover transition-colors duration-200;
+  }
+  
+  .creative-button {
+    @apply bg-gradient-accent text-accent-foreground px-8 py-3 rounded-full;
+    @apply hover:scale-105 transition-all duration-300 shadow-soft hover:shadow-card;
+  }
+  
+  .gallery-item {
+    @apply rounded-xl overflow-hidden shadow-soft hover:shadow-hover;
+    @apply transition-all duration-300 hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-accent bg-clip-text text-transparent;
   }
 }
