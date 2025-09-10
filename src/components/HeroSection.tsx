@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, Mail } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
-
 const HeroSection = () => {
   const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('projects')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-hero">
+  return <section className="min-h-screen flex items-center justify-center bg-gradient-hero">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Hero Content */}
@@ -23,26 +22,15 @@ const HeroSection = () => {
             </div>
             
             <div className="space-y-6">
-              <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">
-                Passionate about creating meaningful digital experiences through 
-                innovative design and cutting-edge technology. Currently pursuing 
-                Creative Computing at University, specializing in UI/UX design, 
-                3D modeling, and interactive media.
-              </p>
+              <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">Passionate about creating meaningful digital experiences through innovative design and cutting-edge technology. Currently pursuingComputing for Digital Media and Games BSc (Hons) at University of Sussex, specializing in UI/UX design, 3D modeling, and interactive media.</p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={scrollToProjects}
-                  className="creative-button group"
-                >
+                <Button onClick={scrollToProjects} className="creative-button group">
                   View My Work
                   <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                 </Button>
                 
-                <Button 
-                  variant="outline" 
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                >
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </Button>
@@ -53,11 +41,7 @@ const HeroSection = () => {
               <div className="text-sm text-muted-foreground">
                 Available for internships & collaborations
               </div>
-              <Button 
-                variant="ghost" 
-                size="sm"
-                className="hover:bg-accent hover:text-accent-foreground"
-              >
+              <Button variant="ghost" size="sm" className="hover:bg-accent hover:text-accent-foreground">
                 <Mail className="h-4 w-4 mr-2" />
                 Get in touch
               </Button>
@@ -67,11 +51,7 @@ const HeroSection = () => {
           {/* Hero Image */}
           <div className="relative animate-scale-in">
             <div className="relative">
-              <img 
-                src={heroImage}
-                alt="Creative workspace showing design and development tools"
-                className="w-full h-[500px] object-cover rounded-2xl shadow-hover"
-              />
+              <img src={heroImage} alt="Creative workspace showing design and development tools" className="w-full h-[500px] object-cover rounded-2xl shadow-hover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl" />
             </div>
             
@@ -84,8 +64,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
