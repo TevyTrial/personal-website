@@ -1,69 +1,75 @@
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+
 const HeroSection = () => {
-  const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
-  return <section className="min-h-screen flex items-center justify-center bg-gradient-hero">
-      <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  return (
+    <section className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Hero Content */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-12 animate-fade-in">
+            {/* Title */}
             <div className="space-y-4">
-              <h1 className="hero-text text-gradient">
-                Alex Thompson
+              <h1 className="text-2xl font-normal text-primary tracking-wide">
+                WELCOME TO MY
               </h1>
-              <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
-                Creative Computing Student | UI/UX & Game Design
+              <h2 className="text-4xl md:text-5xl font-serif italic text-primary leading-tight">
+                Creative Portfolio
               </h2>
             </div>
             
+            {/* About Section */}
             <div className="space-y-6">
-              <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">Passionate about creating meaningful digital experiences through innovative design and cutting-edge technology. Currently pursuingComputing for Digital Media and Games BSc (Hons) at University of Sussex, specializing in UI/UX design, 3D modeling, and interactive media.</p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={scrollToProjects} className="creative-button group">
-                  View My Work
-                  <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-                </Button>
-                
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download CV
-                </Button>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary">
+                About
+              </h3>
+              <div className="space-y-4">
+                <h4 className="text-xl font-medium text-primary">
+                  Hi! I am Alex Thompson.
+                </h4>
+                <p className="text-base text-primary leading-relaxed max-w-md">
+                  I'm a Second-year student, major in Computing for Digital Media and Games BSc (Hons) at University of Sussex.
+                </p>
+                <p className="text-base text-primary leading-relaxed max-w-md">
+                  Based in <span className="bg-accent px-1 rounded">United Kingdom</span>.
+                </p>
               </div>
             </div>
             
+            {/* Social Icons */}
             <div className="flex items-center gap-6 pt-4">
-              <div className="text-sm text-muted-foreground">
-                Available for internships & collaborations
-              </div>
-              <Button variant="ghost" size="sm" className="hover:bg-accent hover:text-accent-foreground">
-                <Mail className="h-4 w-4 mr-2" />
-                Get in touch
-              </Button>
+              <a href="#" className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                <Github className="h-5 w-5" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                <Mail className="h-5 w-5" />
+              </a>
             </div>
           </div>
           
-          {/* Hero Image */}
-          <div className="relative animate-scale-in">
-            <div className="relative">
-              <img src={heroImage} alt="Creative workspace showing design and development tools" className="w-full h-[500px] object-cover rounded-2xl shadow-hover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl" />
-            </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 animate-float">
-              <div className="bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium shadow-soft">
-                Available Now
+          {/* Hero Image with Organic Cutout */}
+          <div className="relative animate-scale-in lg:justify-self-end">
+            <div className="relative w-full max-w-md mx-auto">
+              {/* Organic shaped mask */}
+              <div className="relative w-full h-[500px] overflow-hidden" style={{
+                clipPath: "ellipse(45% 40% at 60% 45%)",
+                borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"
+              }}>
+                <img 
+                  src={heroImage} 
+                  alt="Alex Thompson - Creative Computing Student" 
+                  className="w-full h-full object-cover scale-110" 
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
