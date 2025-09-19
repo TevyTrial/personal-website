@@ -1,4 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
@@ -64,6 +66,8 @@ const projects = [
 ];
 
 const SimpleProjectsSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="projects" className="bg-background-alt py-20">
       <div className="max-w-7xl mx-auto px-8">
@@ -144,6 +148,16 @@ const SimpleProjectsSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        {/* View All Projects Button */}
+        <div className="text-center mt-16">
+          <Button 
+            onClick={() => navigate("/projects")}
+            className="px-8 py-3 text-base"
+          >
+            View All Projects
+          </Button>
         </div>
       </div>
     </section>
