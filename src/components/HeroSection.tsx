@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen bg-background">
+    <section className="min-h-screen bg-background pt-16">
       <div className="max-w-7xl mx-auto px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Hero Content */}
