@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen bg-background pt-16">
       <div className="max-w-7xl mx-auto px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Hero Content */}
           <div className="space-y-12 animate-fade-in">
             {/* Title */}
@@ -14,7 +14,7 @@ const HeroSection = () => {
                 WELCOME TO MY
               </h1>
               <h2 className="text-4xl md:text-5xl font-serif italic text-primary leading-tight">
-                Creative Portfolio
+                Portfolio Website
               </h2>
             </div>
             
@@ -25,7 +25,7 @@ const HeroSection = () => {
               </h3>
               <div className="space-y-4">
                 <h4 className="text-xl font-medium text-primary">
-                  Hi! I am Alex Thompson.
+                  Hi! I am Tevy Ho.
                 </h4>
                 <p className="text-base text-primary leading-relaxed max-w-md">
                   I'm a Second-year student, major in Computing for Digital Media and Games BSc (Hons) at University of Sussex.
@@ -54,14 +54,13 @@ const HeroSection = () => {
           <div className="relative animate-scale-in lg:justify-self-end">
             <div className="relative w-full max-w-md mx-auto">
               {/* Organic shaped mask */}
-              <div className="relative w-full h-[500px] overflow-hidden" style={{
+              <div className="relative animate-scale-in lg:justify-self-end" style={{
                 clipPath: "ellipse(45% 40% at 60% 45%)",
-                borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"
-              }}>
+               }}>
                 <img 
                   src={heroImage} 
-                  alt="Alex Thompson - Creative Computing Student" 
-                  className="w-full h-full object-cover scale-110" 
+                  alt="Tevy Ho - Creative Computing Student" 
+                  className="w-full h-full object-cover scale-100" 
                 />
               </div>
             </div>
