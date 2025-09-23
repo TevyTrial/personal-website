@@ -168,4 +168,48 @@ All colors MUST be HSL.
   .text-gradient {
     @apply bg-gradient-accent bg-clip-text text-transparent;
   }
+  
+  .strikethrough-text {
+    position: relative;
+  }
+  
+  .strikethrough-text:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 3px;
+    background: #8B0000; /* Dark red color */
+    animation: strike 5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  @keyframes strike {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  /* Drawing reveal effect for hero image */
+  .drawing-reveal-effect {
+    opacity: 1;
+    clip-path: inset(0 100% 0 0);
+    animation: wipeReveal 3s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes wipeReveal {
+    0% {
+      clip-path: inset(0 0 0 100%);
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
 }

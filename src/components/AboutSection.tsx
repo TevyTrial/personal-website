@@ -34,7 +34,7 @@ const AboutSection = () => {
     // Create a dummy PDF download - replace with actual CV file
     const link = document.createElement('a');
     link.href = '#'; // Replace with actual CV file path
-    link.download = 'Alex_Thompson_CV.pdf';
+    link.download = 'TevyHo_CV.pdf';
     link.click();
   };
 

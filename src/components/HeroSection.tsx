@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/heroImg.png";
 
 const HeroSection = () => {
   return (
@@ -10,7 +10,7 @@ const HeroSection = () => {
           <div className="space-y-12 animate-fade-in">
             {/* Title */}
             <div className="space-y-4">
-              <h1 className="text-2xl font-normal text-primary tracking-wide">
+              <h1 className="text-2xl md:text-3xl font-normal text-primary tracking-wide">
                 WELCOME TO MY
               </h1>
               <h2 className="text-4xl md:text-5xl font-serif italic text-primary leading-tight">
@@ -24,14 +24,18 @@ const HeroSection = () => {
                 About
               </h3>
               <div className="space-y-4">
-                <h4 className="text-xl font-medium text-primary">
+                <h4 className="text-2xl font-medium text-primary">
                   Hi! I am Tevy Ho.
                 </h4>
-                <p className="text-base text-primary leading-relaxed max-w-md">
+                <p className="text-lg text-primary leading-relaxed max-w-md">
                   I'm a Second-year student, major in Computing for Digital Media and Games BSc (Hons) at University of Sussex.
                 </p>
-                <p className="text-base text-primary leading-relaxed max-w-md">
-                  Based in <span className="bg-accent px-1 rounded">United Kingdom</span>.
+                <p className="text-lg text-primary leading-relaxed max-w-md">
+                  Based in{" "}
+                  <span className="relative inline-block strikethrough-text">
+                    Hong Kong
+                  </span>{" "}
+                  <span className="bg-accent px-1 rounded">United Kingdom</span>.
                 </p>
               </div>
             </div>
@@ -50,19 +54,14 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Hero Image with Organic Cutout */}
+          {/* Hero Image with Drawing Effect */}
           <div className="relative animate-scale-in lg:justify-self-end">
-            <div className="relative w-full max-w-md mx-auto">
-              {/* Organic shaped mask */}
-              <div className="relative animate-scale-in lg:justify-self-end" style={{
-                clipPath: "ellipse(45% 40% at 60% 45%)",
-               }}>
-                <img 
-                  src={heroImage} 
-                  alt="Tevy Ho - Creative Computing Student" 
-                  className="w-full h-full object-cover scale-100" 
-                />
-              </div>
+            <div className="relative w-full max-w-xl mx-auto">
+              <img 
+                src={heroImage} 
+                alt="Tevy Ho - Creative Computing Student" 
+                className="w-full h-auto object-cover rounded-lg drawing-reveal-effect" 
+              />
             </div>
           </div>
         </div>

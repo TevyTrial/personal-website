@@ -57,12 +57,23 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const project = projectData[Number(id) as keyof typeof projectData];
 
+  const handleBackToProjects = () => {
+    navigate("/");
+    // Use setTimeout to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "instant" });
+      }
+    }, 100);
+  };
+
   if (!project) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-serif text-primary mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate("/projects")}>
+          <Button onClick={handleBackToProjects}>
             Back to Projects
           </Button>
         </div>
@@ -73,15 +84,6 @@ const ProjectDetail = () => {
   return (
     <div className="min-h-screen bg-background py-20">
       <div className="max-w-4xl mx-auto px-8">
-        {/* Back Button */}
-        <Button 
-          variant="outline" 
-          onClick={() => navigate("/projects")}
-          className="mb-8"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Projects
-        </Button>
 
         {/* Project Header */}
         <div className="mb-12">
@@ -159,7 +161,7 @@ const ProjectDetail = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-4 justify-center mb-8">
           <Button className="px-6 py-3">
             <ExternalLink className="h-4 w-4 mr-2" />
             Live Demo
@@ -167,6 +169,18 @@ const ProjectDetail = () => {
           <Button variant="outline" className="px-6 py-3">
             <Github className="h-4 w-4 mr-2" />
             View Code
+          </Button>
+        </div>
+
+        {/* Back Button - Bottom Left */}
+        <div className="flex justify-start">
+          <Button 
+            variant="outline" 
+            onClick={handleBackToProjects}
+            className="px-6 py-3"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Projects
           </Button>
         </div>
       </div>
