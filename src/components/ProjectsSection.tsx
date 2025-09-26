@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-const categories = ["All", "Game Design", "UI/UX Design", "Animation", "3D Modelling", "Graphic & Logo Design", "Video Editing"];
+const categories = ["All", "Game Design", "UI/UX Design", "3D & Animation", "Graphic & Logo Design", "Video Editing"];
 
 const projects = [
   {
@@ -25,22 +25,14 @@ const projects = [
   },
   {
     id: 3,
-    title: "Motion Graphics Reel",
-    description: "Collection of animated sequences for social media and advertising showcasing 2D animation skills.",
+    title: "3D Animation Studio",
+    description: "Complete 3D modeling and animation pipeline featuring character rigs, environmental design, and motion graphics for various media projects.",
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-    tags: ["Animation", "Video Editing"],
-    category: "Animation"
+    tags: ["3D Modelling", "Animation"],
+    category: "3D & Animation"
   },
   {
     id: 4,
-    title: "Virtual Gallery 3D",
-    description: "Interactive 3D art gallery built with realistic material rendering and dynamic lighting systems.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=300&fit=crop",
-    tags: ["3D Modelling"],
-    category: "3D Modelling"
-  },
-  {
-    id: 5,
     title: "Brand Identity System",
     description: "Complete visual identity for tech startup including logo design and comprehensive brand guidelines.",
     image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
@@ -48,7 +40,7 @@ const projects = [
     category: "Graphic & Logo Design"
   },
   {
-    id: 6,
+    id: 5,
     title: "Documentary Film Edit",
     description: "Professional video editing for environmental documentary with color grading and sound design.",
     image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&h=300&fit=crop",
@@ -56,28 +48,12 @@ const projects = [
     category: "Video Editing"
   },
   {
-    id: 7,
+    id: 6,
     title: "UX Research Dashboard",
     description: "Data visualization dashboard for UX research insights focused on user behavior analytics.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
     tags: ["UI/UX Design"],
     category: "UI/UX Design"
-  },
-  {
-    id: 8,
-    title: "Character Animation Rigs",
-    description: "3D character rigs with smooth animations for game development and cinematic sequences.",
-    image: "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=400&h=300&fit=crop",
-    tags: ["Animation", "3D Modelling"],
-    category: "Animation"
-  },
-  {
-    id: 9,
-    title: "Poster Design Collection",
-    description: "Creative poster designs for various events showcasing typography and visual composition skills.",
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop",
-    tags: ["Graphic & Logo Design"],
-    category: "Graphic & Logo Design"
   }
 ];
 
@@ -87,7 +63,9 @@ const ProjectsSection = () => {
 
   const filteredProjects = activeFilter === "All" 
     ? projects 
-    : projects.filter(project => project.tags.includes(activeFilter));
+    : activeFilter === "3D & Animation"
+      ? projects.filter(project => project.category === "3D & Animation")
+      : projects.filter(project => project.tags.includes(activeFilter));
 
   const handleProjectClick = (projectId: number) => {
     navigate(`/projects/${projectId}`);
@@ -108,16 +86,43 @@ const ProjectsSection = () => {
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeFilter === category ? "default" : "outline"}
-              onClick={() => setActiveFilter(category)}
-              className="px-6 py-2 text-sm font-medium transition-all duration-200"
-            >
-              {category}
-            </Button>
-          ))}
+          {categories.map((category, index) => {
+            const colorClasses = [
+              'project-btn-default',   // All - Default dark brown
+              'project-btn-aqua',      // Game Design - Aqua
+              'project-btn-olive',     // UI/UX Design - Olive
+              'project-btn-golden',    // 3D & Animation - Golden
+              'project-btn-orange',    // Graphic & Logo Design - Orange
+              'project-btn-teal'       // Video Editing - Teal
+            ];
+            const colorClass = colorClasses[index % colorClasses.length];
+            const isActive = activeFilter === category;
+            const activeClass = isActive ? `${colorClass}-active` : '';
+            
+            return (
+              <Button
+                key={category}
+                variant="outline"
+                onClick={() => setActiveFilter(category)}
+                className={`px-6 py-2 text-sm font-medium transition-all duration-300 ${colorClass} ${activeClass}`}
+                style={isActive ? (
+                  colorClass === 'project-btn-default' ? {
+                    // Default dark brown for "All" button
+                    backgroundColor: `hsl(var(--primary))`,
+                    borderColor: `hsl(var(--primary))`,
+                    color: `hsl(var(--primary-foreground))`
+                  } : {
+                    // Solid colors for other buttons (no glow)
+                    backgroundColor: `hsl(var(--${colorClass.split('-')[2]}))`,
+                    borderColor: `hsl(var(--${colorClass.split('-')[2]}))`,
+                    color: `white`
+                  }
+                ) : {}}
+              >
+                {category}
+              </Button>
+            );
+          })}
         </div>
 
         {/* Projects Grid */}
@@ -125,7 +130,7 @@ const ProjectsSection = () => {
           {filteredProjects.map((project, index) => (
             <Card 
               key={project.id}
-              className="bg-card border-0 shadow-soft overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-hover hover:-translate-y-1 animate-scale-in"
+              className="bg-card border-0 shadow-soft overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-hover hover:-translate-y-1 animate-scale-in hover:border-colorful-teal/30 dark:hover:border-colorful-aqua/30"
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => handleProjectClick(project.id)}
             >
@@ -148,15 +153,26 @@ const ProjectsSection = () => {
                 </div>
                 
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge 
-                      key={tag} 
-                      variant="outline" 
-                      className="text-xs border-primary/30 text-primary"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
+                  {project.tags.map((tag, tagIndex) => {
+                    const tagColors = [
+                      'hover:border-colorful-teal/50 hover:text-colorful-teal',
+                      'hover:border-colorful-aqua/50 hover:text-colorful-aqua', 
+                      'hover:border-colorful-olive/50 hover:text-colorful-olive',
+                      'hover:border-colorful-golden/50 hover:text-colorful-golden',
+                      'hover:border-colorful-orange/50 hover:text-colorful-orange'
+                    ];
+                    const tagColorClass = tagColors[tagIndex % tagColors.length];
+                    
+                    return (
+                      <Badge 
+                        key={tag} 
+                        variant="outline" 
+                        className={`text-xs border-primary/30 text-primary transition-all duration-300 ${tagColorClass}`}
+                      >
+                        {tag}
+                      </Badge>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>

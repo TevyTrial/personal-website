@@ -42,14 +42,14 @@ const HeroSection = () => {
             
             {/* Social Icons */}
             <div className="flex items-center gap-6 pt-4">
-              <a href="#" className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                <Github className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-github">
+                <Github className="h-5 w-5 transition-colors duration-300" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                <Linkedin className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-linkedin">
+                <Linkedin className="h-5 w-5 transition-colors duration-300" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                <Mail className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-mail">
+                <Mail className="h-5 w-5 transition-colors duration-300" />
               </a>
             </div>
           </div>

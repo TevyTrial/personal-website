@@ -32,6 +32,13 @@ All colors MUST be HSL.
     --accent-foreground: 25 25% 25%;
     --accent-hover: 45 55% 65%;
     
+    /* Colorful Accent Palette - For hovers and highlights */
+    --teal: 197 90% 35%; /* #0A7AA6 - main buttons, links, headers */
+    --aqua: 187 85% 40%; /* #0BADBF - hover effects, icons, dividers */
+    --olive: 76 55% 40%; /* #7FA62D - category labels, supportive highlights */
+    --golden: 50 70% 50%; /* #D9BC2B - call-to-action highlights */
+    --orange: 18 65% 55%; /* #D9663D - rare contrast, alerts */
+    
     --muted: 35 15% 85%;
     --muted-foreground: 25 15% 55%;
     
@@ -76,41 +83,65 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Warm Creative Palette */
+    --background: 15 15% 18%; /* Darker warm brown background */
+    --background-alt: 20 20% 22%; /* Navigation bar - lighter than background */
+    --foreground: 35 25% 92%; /* #F5F1ED - warm off-white */
+    
+    --card: 15 20% 18%; /* #8B6B67 equivalent - warm brown cards */
+    --card-foreground: 35 25% 92%; /* Warm off-white text */
+    --card-hover: 20 25% 22%; /* Lighter brown for hover */
+    
+    --popover: 15 20% 18%;
+    --popover-foreground: 35 25% 92%;
+    
+    --primary: 35 25% 92%; /* #F5F1ED - warm off-white for primary text */
+    --primary-foreground: 15 15% 12%; /* Dark background for contrast */
+    --primary-hover: 35 30% 85%; /* Slightly dimmer for hover */
+    
+    --secondary: 15 25% 25%; /* #7A5E5A equivalent - medium warm brown */
+    --secondary-foreground: 35 20% 88%; /* #E8E0DB - softer warm light gray */
+    --secondary-hover: 20 30% 30%; /* Lighter for hover */
+    
+    --accent: 20 30% 35%; /* #9D7B76 equivalent - warm accent brown */
+    --accent-foreground: 35 25% 92%;
+    --accent-hover: 25 35% 40%; /* Lighter for hover */
+    
+    /* Colorful Accent Palette - Same for dark mode */
+    --teal: 197 90% 45%; /* Slightly brighter for dark mode */
+    --aqua: 187 85% 50%; 
+    --olive: 76 55% 50%; 
+    --golden: 50 70% 60%; 
+    --orange: 18 65% 65%; 
+    
+    --muted: 15 20% 25%; /* Warm muted background */
+    --muted-foreground: 25 15% 70%; /* #C7B8B3 - warm mid-gray */
+    
+    --destructive: 0 70% 55%; /* Slightly muted red for dark mode */
+    --destructive-foreground: 35 25% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 20 20% 30%; /* Warm border for dark mode */
+    --input: 15 20% 22%; /* Warm input background */
+    --ring: 35 25% 92%; /* Light ring for focus */
+    
+    /* Update gradients for dark mode */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--background-alt)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card-hover)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-hover)));
+    
+    /* Update shadows for dark mode */
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+    --shadow-hover: 0 12px 40px -8px hsl(0 0% 0% / 0.5);
+    
+    --sidebar-background: 15 15% 12%;
+    --sidebar-foreground: 35 25% 92%;
+    --sidebar-primary: 35 25% 92%;
+    --sidebar-primary-foreground: 15 15% 12%;
+    --sidebar-accent: 15 20% 18%;
+    --sidebar-accent-foreground: 35 25% 92%;
+    --sidebar-border: 20 20% 25%;
+    --sidebar-ring: 35 25% 92%;
   }
 }
 
@@ -122,6 +153,12 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground scroll-smooth;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Smooth transitions for all theme-aware elements */
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
   
   .font-serif {
@@ -156,6 +193,12 @@ All colors MUST be HSL.
   .creative-button {
     @apply bg-gradient-accent text-accent-foreground px-8 py-3 rounded-full;
     @apply hover:scale-105 transition-all duration-300 shadow-soft hover:shadow-card;
+    border: 1px solid transparent;
+  }
+  
+  .creative-button:hover {
+    border-color: hsl(var(--teal));
+    box-shadow: 0 0 20px hsl(var(--teal) / 0.2);
   }
   
   .gallery-item {
@@ -167,6 +210,45 @@ All colors MUST be HSL.
 @layer utilities {
   .text-gradient {
     @apply bg-gradient-accent bg-clip-text text-transparent;
+  }
+  
+  .bg-background-alt {
+    background-color: hsl(var(--background-alt));
+  }
+  
+  /* Colorful accent utilities */
+  .text-teal { color: hsl(var(--teal)); }
+  .text-aqua { color: hsl(var(--aqua)); }
+  .text-olive { color: hsl(var(--olive)); }
+  .text-golden { color: hsl(var(--golden)); }
+  .text-orange { color: hsl(var(--orange)); }
+  
+  .hover-teal:hover { color: hsl(var(--teal)); }
+  .hover-aqua:hover { color: hsl(var(--aqua)); }
+  .hover-olive:hover { color: hsl(var(--olive)); }
+  .hover-golden:hover { color: hsl(var(--golden)); }
+  .hover-orange:hover { color: hsl(var(--orange)); }
+  
+  /* Social icon hover effects */
+  .social-icon-github:hover {
+    box-shadow: 0 4px 20px hsl(var(--teal) / 0.3);
+  }
+  .social-icon-github:hover svg {
+    color: hsl(var(--teal));
+  }
+  
+  .social-icon-linkedin:hover {
+    box-shadow: 0 4px 20px hsl(var(--aqua) / 0.3);
+  }
+  .social-icon-linkedin:hover svg {
+    color: hsl(var(--aqua));
+  }
+  
+  .social-icon-mail:hover {
+    box-shadow: 0 4px 20px hsl(var(--golden) / 0.3);
+  }
+  .social-icon-mail:hover svg {
+    color: hsl(var(--golden));
   }
   
   .strikethrough-text {
@@ -212,4 +294,135 @@ All colors MUST be HSL.
       clip-path: inset(0 0 0 0);
     }
   }
+  
+  /* Project Filter Button Colors */
+  .project-btn-teal:hover {
+    background-color: hsl(var(--teal) / 0.1);
+    border-color: hsl(var(--teal) / 0.5);
+    color: hsl(var(--teal));
+    box-shadow: 0 4px 16px hsl(var(--teal) / 0.2);
+  }
+  
+  .project-btn-aqua:hover {
+    background-color: hsl(var(--aqua) / 0.1);
+    border-color: hsl(var(--aqua) / 0.5);
+    color: hsl(var(--aqua));
+    box-shadow: 0 4px 16px hsl(var(--aqua) / 0.2);
+  }
+  
+  .project-btn-olive:hover {
+    background-color: hsl(var(--olive) / 0.1);
+    border-color: hsl(var(--olive) / 0.5);
+    color: hsl(var(--olive));
+    box-shadow: 0 4px 16px hsl(var(--olive) / 0.2);
+  }
+  
+  .project-btn-golden:hover {
+    background-color: hsl(var(--golden) / 0.1);
+    border-color: hsl(var(--golden) / 0.5);
+    color: hsl(var(--golden));
+    box-shadow: 0 4px 16px hsl(var(--golden) / 0.2);
+  }
+  
+  .project-btn-orange:hover {
+    background-color: hsl(var(--orange) / 0.1);
+    border-color: hsl(var(--orange) / 0.5);
+    color: hsl(var(--orange));
+    box-shadow: 0 4px 16px hsl(var(--orange) / 0.2);
+  }
+  
+  /* Active State Colors for Selected Filter Buttons */
+  button.project-btn-teal-active,
+  .project-btn-teal-active {
+    background-color: hsl(var(--teal) / 0.2) !important;
+    border-color: hsl(var(--teal)) !important;
+    color: hsl(var(--teal)) !important;
+    box-shadow: 0 4px 16px hsl(var(--teal) / 0.3) !important;
+  }
+  
+  button.project-btn-teal-active:hover,
+  .project-btn-teal-active:hover {
+    background-color: hsl(var(--teal) / 0.25) !important;
+    border-color: hsl(var(--teal)) !important;
+    color: hsl(var(--teal)) !important;
+  }
+  
+  button.project-btn-aqua-active,
+  .project-btn-aqua-active {
+    background-color: hsl(var(--aqua) / 0.2) !important;
+    border-color: hsl(var(--aqua)) !important;
+    color: hsl(var(--aqua)) !important;
+    box-shadow: 0 4px 16px hsl(var(--aqua) / 0.3) !important;
+  }
+  
+  button.project-btn-aqua-active:hover,
+  .project-btn-aqua-active:hover {
+    background-color: hsl(var(--aqua) / 0.25) !important;
+    border-color: hsl(var(--aqua)) !important;
+    color: hsl(var(--aqua)) !important;
+  }
+  
+  button.project-btn-olive-active,
+  .project-btn-olive-active {
+    background-color: hsl(var(--olive) / 0.2) !important;
+    border-color: hsl(var(--olive)) !important;
+    color: hsl(var(--olive)) !important;
+    box-shadow: 0 4px 16px hsl(var(--olive) / 0.3) !important;
+  }
+  
+  button.project-btn-olive-active:hover,
+  .project-btn-olive-active:hover {
+    background-color: hsl(var(--olive) / 0.25) !important;
+    border-color: hsl(var(--olive)) !important;
+    color: hsl(var(--olive)) !important;
+  }
+  
+  button.project-btn-golden-active,
+  .project-btn-golden-active {
+    background-color: hsl(var(--golden) / 0.2) !important;
+    border-color: hsl(var(--golden)) !important;
+    color: hsl(var(--golden)) !important;
+    box-shadow: 0 4px 16px hsl(var(--golden) / 0.3) !important;
+  }
+  
+  button.project-btn-golden-active:hover,
+  .project-btn-golden-active:hover {
+    background-color: hsl(var(--golden) / 0.25) !important;
+    border-color: hsl(var(--golden)) !important;
+    color: hsl(var(--golden)) !important;
+  }
+  
+  button.project-btn-orange-active,
+  .project-btn-orange-active {
+    background-color: hsl(var(--orange) / 0.2) !important;
+    border-color: hsl(var(--orange)) !important;
+    color: hsl(var(--orange)) !important;
+    box-shadow: 0 4px 16px hsl(var(--orange) / 0.3) !important;
+  }
+  
+  button.project-btn-orange-active:hover,
+  .project-btn-orange-active:hover {
+    background-color: hsl(var(--orange) / 0.25) !important;
+    border-color: hsl(var(--orange)) !important;
+    color: hsl(var(--orange)) !important;
+  }
+  
+  /* Colorful Utility Classes */
+  .text-colorful-teal { color: hsl(var(--teal)); }
+  .text-colorful-aqua { color: hsl(var(--aqua)); }
+  .text-colorful-olive { color: hsl(var(--olive)); }
+  .text-colorful-golden { color: hsl(var(--golden)); }
+  .text-colorful-orange { color: hsl(var(--orange)); }
+  
+  .border-colorful-teal { border-color: hsl(var(--teal)); }
+  .border-colorful-aqua { border-color: hsl(var(--aqua)); }
+  .border-colorful-olive { border-color: hsl(var(--olive)); }
+  .border-colorful-golden { border-color: hsl(var(--golden)); }
+  .border-colorful-orange { border-color: hsl(var(--orange)); }
+  
+  .bg-colorful-teal { background-color: hsl(var(--teal)); }
+  .bg-colorful-aqua { background-color: hsl(var(--aqua)); }
+  .bg-colorful-olive { background-color: hsl(var(--olive)); }
+  .bg-colorful-golden { background-color: hsl(var(--golden)); }
+  .bg-colorful-orange { background-color: hsl(var(--orange)); }
 }
