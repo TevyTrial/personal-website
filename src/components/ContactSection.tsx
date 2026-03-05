@@ -65,7 +65,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "London, UK",
+      value: "Brighton, UK",
       link: null
     }
   ];

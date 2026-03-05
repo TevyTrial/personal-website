@@ -3,23 +3,25 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import AHRThumbnail from "@/assets/AHR_thumbnail.png";
+import BWDThumbnail from "@/assets/BWD_thumbnail.png";
 
 const categories = ["All", "Game Design", "UI/UX Design", "3D & Animation", "Graphic & Logo Design", "Video Editing"];
 
 const projects = [
   {
     id: 1,
-    title: "Fantasy Game Environment",
+    title: "A Hero's Redemption",
     description: "Immersive 3D environment design with detailed texturing and atmospheric lighting for indie game project.",
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop",
+    image: AHRThumbnail,
     tags: ["Game Design", "3D Modelling"],
     category: "Game Design"
   },
   {
     id: 2,
-    title: "EcoTrack Mobile App",
-    description: "Sustainable living tracker with gamification elements. UI/UX design focused on user engagement.",
-    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=400&h=300&fit=crop",
+    title: "Bloom with Dorcas",
+    description: "Bloom with Dorcas is a cozy music farming game that combines plant care guidance with gamification elements to encourage users to nurture their green spaces.",
+    image: BWDThumbnail,
     tags: ["UI/UX Design"],
     category: "UI/UX Design"
   },
@@ -134,7 +136,7 @@ const ProjectsSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => handleProjectClick(project.id)}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden flex">
                 <img 
                   src={project.image}
                   alt={project.title}

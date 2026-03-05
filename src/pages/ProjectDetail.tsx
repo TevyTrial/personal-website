@@ -3,34 +3,36 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import AHR1 from "@/assets/projects/AHR1.png";
+import AHR2 from "@/assets/projects/AHR2.png";
+import AHR3 from "@/assets/projects/AHR3.png";
+import AHR4 from "@/assets/projects/AHR4.png";
+import AHR5 from "@/assets/projects/AHR5.png";
 
 const projectData = {
   1: {
-    title: "Fantasy Game Environment",
+    title: "A Hero's Redemption",
     category: "Game Design",
-    description: "An immersive 3D environment design created for an indie fantasy RPG. This project showcases detailed texturing, atmospheric lighting, and environmental storytelling through visual design.",
-    fullDescription: "This project involved creating a complete game environment from concept to final implementation. Starting with mood boards and concept sketches, I developed a cohesive visual style that supports the game's narrative. The environment features dynamic lighting systems, detailed texture work, and optimized geometry for real-time rendering.",
-    images: [
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=600&fit=crop"
-    ],
-    tags: ["Game Design", "3D Modelling"],
-    tools: ["Blender", "Unity", "Substance Painter", "Photoshop"],
-    duration: "3 months",
+    description: "Our game is a rogue-like RPG. Players control a fallen hero who must descend into a dangerous dungeon to rescue a kidnapped princess and defeat the Demon Lord. ",
+    fullDescription: "It features fast-paced combat, 2 levels progression-based gameplay, and hidden secrets to explore. To survive, players must collect loot from treasure chests and equip better weapons and armor to restore the hero's strength. The dungeon also has hidden secrets for players to discover. With AI enemies that adapt to player strategies, the game offers a challenging and rewarding experience for fans of the rogue-like genre.",
+    images: [AHR1, AHR2, AHR3, AHR4, AHR5],
+    tags: ["Game Design", "3D Modelling","UI/UX Design"],
+    tools: ["Unity", "C#", "Figma"],
+    duration: "10 months",
     role: "Environment Artist & Designer"
   },
+
   2: {
-    title: "EcoTrack Mobile App",
-    category: "UI/UX Design",
-    description: "A sustainable living tracker with gamification elements, designed to encourage eco-friendly habits through engaging user experience design.",
+    title: "Bloom with Dorcas",
+    category: "Game Design",
+    description: "Bloom with Dorcas is a music gardening game that combines plant care guidance with gamification elements to encourage users to nurture their green spaces.",
     fullDescription: "EcoTrack is a comprehensive mobile application designed to help users track and improve their environmental impact. The design process included extensive user research, wireframing, prototyping, and usability testing. The app features a clean, intuitive interface with gamification elements to motivate users toward sustainable behaviors.",
     images: [
       "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop"
     ],
-    tags: ["UI/UX Design"],
+    tags: ["Game Design", "3D Modelling","UI/UX Design"],
     tools: ["Figma", "Adobe XD", "Principle", "InVision"],
     duration: "2 months",
     role: "UI/UX Designer"
@@ -150,11 +152,11 @@ const ProjectDetail = () => {
         {/* Additional Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {project.images.slice(1).map((image, index) => (
-            <div key={index} className="aspect-[4/3] rounded-lg overflow-hidden shadow-soft">
+            <div key={index} className="rounded-lg overflow-hidden shadow-soft">
               <img 
                 src={image}
                 alt={`${project.title} ${index + 2}`}
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           ))}

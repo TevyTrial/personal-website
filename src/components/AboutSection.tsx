@@ -7,25 +7,21 @@ const AboutSection = () => {
     {
       icon: Gamepad2,
       title: "Game Design",
-      level: 85,
       description: "Creating engaging game mechanics and player experiences"
     },
     {
       icon: Palette,
       title: "UI/UX Design", 
-      level: 90,
       description: "Crafting intuitive and beautiful user interfaces"
     },
     {
       icon: Code,
       title: "3D Modeling",
-      level: 75,
       description: "Building detailed 3D assets and environments"
     },
     {
       icon: Video,
       title: "Animation",
-      level: 80,
       description: "Bringing characters and scenes to life through motion"
     }
   ];
@@ -140,19 +136,7 @@ const AboutSection = () => {
                         {skill.description}
                       </p>
                       
-                      {/* Proficiency Bar */}
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Proficiency</span>
-                          <span className="text-primary font-medium">{skill.level}%</span>
-                        </div>
-                        <div className="w-full bg-secondary rounded-full h-2">
-                          <div 
-                            className="bg-gradient-to-r from-primary to-primary/80 h-2 rounded-full transition-all duration-1000 ease-out"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </div>
+                     
                     </CardContent>
                   </Card>
                 );

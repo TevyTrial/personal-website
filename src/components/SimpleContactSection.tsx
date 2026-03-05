@@ -14,7 +14,7 @@ const SimpleContactSection = () => {
           </h2>
           <p className="text-base text-primary max-w-2xl mx-auto">
             Available for internships, collaborations, and creative projects. 
-            Let's create something amazing together.
+            Let's create something amazing together!!
           </p>
         </div>
         
