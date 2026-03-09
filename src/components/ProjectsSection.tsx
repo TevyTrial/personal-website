@@ -27,33 +27,33 @@ const projects = [
   },
   {
     id: 3,
-    title: "3D Animation Studio",
+    title: "Lamp Story",
     description: "Complete 3D modeling and animation pipeline featuring character rigs, environmental design, and motion graphics for various media projects.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+    image: "src/assets/Lampstory_thumbnail.png",
     tags: ["3D Modelling", "Animation"],
     category: "3D & Animation"
   },
   {
     id: 4,
-    title: "Brand Identity System",
+    title: "Property Tycoon",
     description: "Complete visual identity for tech startup including logo design and comprehensive brand guidelines.",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
+    image: "src/assets/Monopoly_thumbnail.png",
     tags: ["Graphic & Logo Design"],
     category: "Graphic & Logo Design"
   },
   {
     id: 5,
-    title: "Documentary Film Edit",
-    description: "Professional video editing for environmental documentary with color grading and sound design.",
-    image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&h=300&fit=crop",
-    tags: ["Video Editing"],
-    category: "Video Editing"
+    title: "CoffeeWizard",
+    description: "A user-friendly mobile app interface for a coffee delivery service, designed to enhance the user experience and streamline the ordering process.",
+    image: "src/assets/CoffeeWizard_thumbnail.png",
+    tags: ["UI/UX Design", "Graphic Design"],
+    category: "UI/UX Design"
   },
   {
     id: 6,
-    title: "UX Research Dashboard",
+    title: "3D Storytelling e-commerce website",
     description: "Data visualization dashboard for UX research insights focused on user behavior analytics.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+    image: "src/assets/3D_Storytelling_thumbnail.png",
     tags: ["UI/UX Design"],
     category: "UI/UX Design"
   }

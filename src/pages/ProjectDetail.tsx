@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -25,7 +26,8 @@ const projectData = {
     tools: ["Unity", "C#", "Figma"],
     duration: "10 months",
     role: "Environment Artist & Designer",
-    videoUrl: "https://youtu.be/1lPwvhXLD8s?si=F9fiCA_3-EOD5SWk"
+    videoUrl: "https://youtu.be/1lPwvhXLD8s?si=F9fiCA_3-EOD5SWk",
+    codeRepo: "https://github.com/vibecoding/a-heros-redemption"
   },
 
   2: {
@@ -36,13 +38,14 @@ const projectData = {
     images: [ BWD1, BWD2, BWD3, BWD4, BWD5],
     tags: ["Game Design", "3D Modelling","UI/UX Design"],
     tools: ["Figma", "Adobe XD", "Principle", "InVision"],
-    duration: "2 months",
+    duration: "6 months",
     role: "All-round Designer",
-    videoUrl: "https://youtu.be/PNwZzf_AkXY?si=IW8M5osAHhRyIluE"
+    videoUrl: "https://youtu.be/PNwZzf_AkXY?si=IW8M5osAHhRyIluE",
+    codeRepo: "https://github.com/TevyTrial/Bloom-With-Dorcas.git"
   },
   3: {
-    title: "Motion Graphics Reel",
-    category: "Animation",
+    title: "Lamp Story",
+    category: "3D & Animation",
     description: "A collection of animated sequences created for social media campaigns and advertising, showcasing 2D animation and motion design skills.",
     fullDescription: "This motion graphics reel demonstrates proficiency in creating engaging animated content for various media platforms. Each piece was designed with specific target audiences and brand guidelines in mind, incorporating smooth transitions, dynamic typography, and compelling visual narratives.",
     images: [
@@ -54,7 +57,42 @@ const projectData = {
     tools: ["After Effects", "Premiere Pro", "Cinema 4D", "Illustrator"],
     duration: "4 months",
     role: "Motion Designer & Animator",
-    videoUrl: undefined
+    videoUrl: undefined,
+    codeRepo: undefined
+  },
+  4: {
+    title: "Property Tycoon",
+    category: "Graphic & Logo Design",
+    description: "A comprehensive brand identity system for a fictional company, including logo design, color palette, and typography guidelines.",
+    fullDescription: "This brand identity system was developed to establish a strong visual presence for the company. It includes a versatile logo design, a carefully selected color palette, and consistent typography that reflects the brand's personality and values.",
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop"
+    ],
+    tags: ["Graphic Design", "Logo Design"],
+    tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
+    duration: "6 months",
+    role: "UI/UX Designer & Programmer",
+    videoUrl: undefined,
+    codeRepo: "https://github.com/vvlolicon/software_asm_project.git"
+  },
+  5: {
+    title: "CoffeeWizard",
+    category: "UI/UX Design",
+    description: "A user-friendly mobile app interface for a coffee delivery service, designed to enhance the user experience and streamline the ordering process.",
+    fullDescription: "This mobile app interface was designed to provide a seamless and enjoyable user experience for a coffee delivery service. The design focuses on intuitive navigation, visually appealing aesthetics, and efficient ordering processes to enhance customer satisfaction.", 
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop"
+    ],  
+    tags: ["UI/UX Design", "Graphic Design"],
+    tools: ["Procreate", "Adobe XD","Canva"],
+    duration: "3 months",
+    role: "UI/UX Designer",
+    videoUrl: undefined,
+    codeRepo: undefined
   }
 };
 
@@ -68,15 +106,13 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const project = projectData[Number(id) as keyof typeof projectData];
 
+useLayoutEffect(() => {
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}, [id]);
+
   const handleBackToProjects = () => {
     navigate("/");
-    // Use setTimeout to ensure navigation completes before scrolling
-    setTimeout(() => {
-      const projectsSection = document.getElementById("projects");
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: "instant" });
-      }
-    }, 100);
   };
 
   if (!project) {
@@ -189,16 +225,18 @@ const ProjectDetail = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center mb-8">
-          <Button className="px-6 py-3">
-            <ExternalLink className="h-4 w-4 mr-2" />
-            Live Demo
-          </Button>
-          <Button variant="outline" className="px-6 py-3">
-            <Github className="h-4 w-4 mr-2" />
-            View Code
-          </Button>
-        </div>
+        {project.codeRepo && (
+          <div className="flex flex-wrap gap-4 justify-center mb-8">
+            <Button 
+              variant="default" 
+              className="px-6 py-3"
+              onClick={() => window.open(project.codeRepo, '_blank')}
+            >
+              <Github className="h-4 w-4 mr-2" />
+              View Code
+            </Button>
+          </div>
+        )}
 
         {/* Back Button - Bottom Left */}
         <div className="flex justify-start">
