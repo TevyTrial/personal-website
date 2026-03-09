@@ -29,7 +29,7 @@ const AboutSection = () => {
   const handleDownloadCV = () => {
     // Create a dummy PDF download - replace with actual CV file
     const link = document.createElement('a');
-    link.href = '#'; // Replace with actual CV file path
+    link.href = '#'; // CV file path
     link.download = 'TevyHo_CV.pdf';
     link.click();
   };
@@ -57,7 +57,7 @@ const AboutSection = () => {
               <h3 className="text-3xl font-serif text-primary">My Story</h3>
               <div className="space-y-4 text-foreground leading-relaxed">
                 <p>
-                  As a second-year Computing for Digital Media and Games student at the University of Sussex, 
+                  As a third-year Computing for Digital Media and Games student at the University of Sussex, 
                   I'm passionate about the intersection of technology and creativity. My journey began with a 
                   fascination for how digital worlds are built and how they can tell compelling stories.
                 </p>

@@ -74,13 +74,13 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/alexthompson",
+      url: "http://www.linkedin.com/in/tevy-ho",
       color: "hover:text-blue-600"
     },
     {
       icon: Github,
       label: "GitHub",
-      url: "https://github.com/alexthompson",
+      url: "https://github.com/TevyTrial",
       color: "hover:text-gray-900"
     },
     {
@@ -276,7 +276,7 @@ const ContactSection = () => {
                   <div>
                     <p className="font-medium text-foreground">Available for work</p>
                     <p className="text-sm text-muted-foreground">
-                      Looking for summer 2024 internships
+                      Looking for internships, freelance projects, and collaborations.
                     </p>
                   </div>
                 </div>

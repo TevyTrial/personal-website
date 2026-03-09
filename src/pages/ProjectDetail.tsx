@@ -8,6 +8,11 @@ import AHR2 from "@/assets/projects/AHR2.png";
 import AHR3 from "@/assets/projects/AHR3.png";
 import AHR4 from "@/assets/projects/AHR4.png";
 import AHR5 from "@/assets/projects/AHR5.png";
+import BWD1 from "@/assets/projects/BWD1.png";
+import BWD2 from "@/assets/projects/BWD2.png";
+import BWD3 from "@/assets/projects/BWD3.png";
+import BWD4 from "@/assets/projects/BWD4.png";
+import BWD5 from "@/assets/projects/BWD5.png";
 
 const projectData = {
   1: {
@@ -19,7 +24,8 @@ const projectData = {
     tags: ["Game Design", "3D Modelling","UI/UX Design"],
     tools: ["Unity", "C#", "Figma"],
     duration: "10 months",
-    role: "Environment Artist & Designer"
+    role: "Environment Artist & Designer",
+    videoUrl: "https://youtu.be/1lPwvhXLD8s?si=F9fiCA_3-EOD5SWk"
   },
 
   2: {
@@ -27,15 +33,12 @@ const projectData = {
     category: "Game Design",
     description: "Bloom with Dorcas is a music gardening game that combines plant care guidance with gamification elements to encourage users to nurture their green spaces.",
     fullDescription: "EcoTrack is a comprehensive mobile application designed to help users track and improve their environmental impact. The design process included extensive user research, wireframing, prototyping, and usability testing. The app features a clean, intuitive interface with gamification elements to motivate users toward sustainable behaviors.",
-    images: [
-      "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop"
-    ],
+    images: [ BWD1, BWD2, BWD3, BWD4, BWD5],
     tags: ["Game Design", "3D Modelling","UI/UX Design"],
     tools: ["Figma", "Adobe XD", "Principle", "InVision"],
     duration: "2 months",
-    role: "UI/UX Designer"
+    role: "All-round Designer",
+    videoUrl: "https://youtu.be/PNwZzf_AkXY?si=IW8M5osAHhRyIluE"
   },
   3: {
     title: "Motion Graphics Reel",
@@ -50,9 +53,15 @@ const projectData = {
     tags: ["Animation", "Video Editing"],
     tools: ["After Effects", "Premiere Pro", "Cinema 4D", "Illustrator"],
     duration: "4 months",
-    role: "Motion Designer & Animator"
+    role: "Motion Designer & Animator",
+    videoUrl: undefined
   }
 };
+
+const getYouTubeEmbedUrl = (url: string) => {
+  const videoIdMatch = url.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-]+)/);
+  return videoIdMatch ? `https://www.youtube.com/embed/${videoIdMatch[1]}` : null;
+}
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -139,16 +148,33 @@ const ProjectDetail = () => {
           />
         </div>
 
-        {/* Project Description */}
-        <Card className="bg-card border-0 shadow-soft mb-8">
-          <CardContent className="p-8">
-            <h2 className="text-2xl font-serif text-primary mb-6">Project Overview</h2>
-            <p className="text-primary leading-relaxed text-lg">
-              {project.fullDescription}
-            </p>
-          </CardContent>
-        </Card>
-
+<Card className="bg-card border-0 shadow-soft mb-8">
+  <CardContent className="p-8">
+    <h2 className="text-2xl font-serif text-primary mb-6">Project Overview</h2>
+    <p className="text-primary leading-relaxed text-lg mb-6">
+      {project.fullDescription}
+    </p>
+    
+    {/* YouTube Video */}
+    {project.videoUrl && (
+      <div className="mt-6">
+        <h3 className="text-xl font-serif text-primary mb-4">Gameplay Video</h3>
+        <div className="aspect-video rounded-lg overflow-hidden shadow-soft">
+          <iframe
+            width="100%"
+            height="100%"
+            src={getYouTubeEmbedUrl(project.videoUrl) || ''}
+            title={`${project.title} Gameplay`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+    )}
+  </CardContent>
+</Card>
         {/* Additional Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {project.images.slice(1).map((image, index) => (

@@ -14,7 +14,7 @@ const projects = [
     title: "A Hero's Redemption",
     description: "Immersive 3D environment design with detailed texturing and atmospheric lighting for indie game project.",
     image: AHRThumbnail,
-    tags: ["Game Design", "3D Modelling"],
+    tags: ["Game Design", "3D Modelling","UI/UX Design"],
     category: "Game Design"
   },
   {
@@ -22,8 +22,8 @@ const projects = [
     title: "Bloom with Dorcas",
     description: "Bloom with Dorcas is a cozy music farming game that combines plant care guidance with gamification elements to encourage users to nurture their green spaces.",
     image: BWDThumbnail,
-    tags: ["UI/UX Design"],
-    category: "UI/UX Design"
+    tags: ["Game Design", "3D Modelling","UI/UX Design"],
+    category: "Game Design"
   },
   {
     id: 3,

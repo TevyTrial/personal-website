@@ -28,7 +28,7 @@ const HeroSection = () => {
                   Hi! I am Tevy Ho.
                 </h4>
                 <p className="text-lg text-primary leading-relaxed max-w-md">
-                  I'm a Second-year student, major in Computing for Digital Media and Games BSc (Hons) at University of Sussex.
+                  I'm a Third-year student, major in Computing for Digital Media and Games BSc (Hons) at University of Sussex.
                 </p>
                 <p className="text-lg text-primary leading-relaxed max-w-md">
                   Based in{" "}
@@ -42,13 +42,13 @@ const HeroSection = () => {
             
             {/* Social Icons */}
             <div className="flex items-center gap-6 pt-4">
-              <a href="#" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-github">
+              <a href="https://github.com/TevyTrial" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-github">
                 <Github className="h-5 w-5 transition-colors duration-300" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-linkedin">
+              <a href="http://www.linkedin.com/in/tevy-ho" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-linkedin">
                 <Linkedin className="h-5 w-5 transition-colors duration-300" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-mail">
+              <a href="mailto:tevy.cl.ho@gmail.com" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-mail">
                 <Mail className="h-5 w-5 transition-colors duration-300" />
               </a>
             </div>
