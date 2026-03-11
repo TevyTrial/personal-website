@@ -14,6 +14,14 @@ import BWD2 from "@/assets/projects/BWD2.png";
 import BWD3 from "@/assets/projects/BWD3.png";
 import BWD4 from "@/assets/projects/BWD4.png";
 import BWD5 from "@/assets/projects/BWD5.png";
+import lamp2 from "@/assets/projects/lamp2.jpg";
+import lamp3 from "@/assets/projects/lamp3.jpg";
+import lamp4 from "@/assets/projects/lamp4.jpg";
+import lamp5 from "@/assets/projects/lamp5.jpg";
+import lamp7 from "@/assets/projects/lamp7.png";
+import lamp8 from "@/assets/projects/lamp8.png";
+import lamp9 from "@/assets/projects/lamp9.png";
+
 
 const projectData = {
   1: {
@@ -48,16 +56,12 @@ const projectData = {
     category: "3D & Animation",
     description: "A collection of animated sequences created for social media campaigns and advertising, showcasing 2D animation and motion design skills.",
     fullDescription: "This motion graphics reel demonstrates proficiency in creating engaging animated content for various media platforms. Each piece was designed with specific target audiences and brand guidelines in mind, incorporating smooth transitions, dynamic typography, and compelling visual narratives.",
-    images: [
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop"
-    ],
+    images: [lamp9, lamp2, lamp3, lamp4, lamp5, lamp7, lamp8],
     tags: ["Animation", "Video Editing"],
     tools: ["After Effects", "Premiere Pro", "Cinema 4D", "Illustrator"],
     duration: "4 months",
     role: "Motion Designer & Animator",
-    videoUrl: undefined,
+    videoUrl: "https://youtu.be/AoGzO_OO6dk?si=-2iYCfCVcFqjcCNL",
     codeRepo: undefined
   },
   4: {

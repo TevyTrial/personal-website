@@ -3,8 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import AHRThumbnail from "@/assets/AHR_thumbnail.png";
-import BWDThumbnail from "@/assets/BWD_thumbnail.png";
 
 const categories = ["All", "Game Design", "UI/UX Design", "3D & Animation", "Graphic & Logo Design", "Video Editing"];
 
@@ -13,7 +11,7 @@ const projects = [
     id: 1,
     title: "A Hero's Redemption",
     description: "Immersive 3D environment design with detailed texturing and atmospheric lighting for indie game project.",
-    image: AHRThumbnail,
+    image: "src/assets/AHR_thumbnail.png",
     tags: ["Game Design", "3D Modelling","UI/UX Design"],
     category: "Game Design"
   },
@@ -21,7 +19,7 @@ const projects = [
     id: 2,
     title: "Bloom with Dorcas",
     description: "Bloom with Dorcas is a cozy music farming game that combines plant care guidance with gamification elements to encourage users to nurture their green spaces.",
-    image: BWDThumbnail,
+    image: "src/assets/BWD_thumbnail.png",
     tags: ["Game Design", "3D Modelling","UI/UX Design"],
     category: "Game Design"
   },
@@ -53,7 +51,7 @@ const projects = [
     id: 6,
     title: "3D Storytelling e-commerce website",
     description: "Data visualization dashboard for UX research insights focused on user behavior analytics.",
-    image: "src/assets/3D_Storytelling_thumbnail.png",
+    image: "src/assets/3dWeb_thumbnail.png",
     tags: ["UI/UX Design"],
     category: "UI/UX Design"
   }
