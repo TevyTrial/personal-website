@@ -7,36 +7,35 @@ const AboutSection = () => {
     {
       icon: Gamepad2,
       title: "Game Design",
-      description: "Creating engaging game mechanics and player experiences"
+      description: "Creating engaging game mechanics and player experiences!"
     },
     {
       icon: Palette,
       title: "UI/UX Design", 
-      description: "Crafting intuitive and beautiful user interfaces"
+      description: "Crafting intuitive, easy-to-use and beautiful user interfaces."
     },
     {
       icon: Code,
       title: "3D Modeling",
-      description: "Building detailed 3D assets and environments"
+      description: "Building detailed or cute 3D assets and environments."
     },
     {
       icon: Video,
       title: "Animation",
-      description: "Bringing characters and scenes to life through motion"
+      description: "Bringing characters and scenes to life through motion."
     }
   ];
 
   const handleDownloadCV = () => {
-    // Create a dummy PDF download - replace with actual CV file
     const link = document.createElement('a');
-    link.href = '#'; // CV file path
+    link.href = '/Tevy-Ho_CV.pdf'; 
     link.download = 'TevyHo_CV.pdf';
     link.click();
   };
 
   const handlePreviewCV = () => {
     // Open CV in new tab - replace with actual CV file
-    window.open('#', '_blank'); // Replace with actual CV file path
+    window.open('/Tevy-Ho_CV.pdf', '_blank'); // Replace with actual CV file path
   };
 
   return (
@@ -57,18 +56,16 @@ const AboutSection = () => {
               <h3 className="text-3xl font-serif text-primary">My Story</h3>
               <div className="space-y-4 text-foreground leading-relaxed">
                 <p>
-                  As a third-year Computing for Digital Media and Games student at the University of Sussex, 
-                  I'm passionate about the intersection of technology and creativity. My journey began with a 
-                  fascination for how digital worlds are built and how they can tell compelling stories.
+                  I’m a third-year Computing for Digital Media and Games student at the University of Sussex, with a strong interest in how technology and creativity can come together. 
+                  I enjoy exploring different ways digital tools can be used to create meaningful and engaging experiences.
                 </p>
                 <p>
-                  Through my studies, I've developed expertise in game design, 3D modeling, UI/UX design, 
-                  and animation. I believe that great digital experiences come from understanding both the 
-                  technical foundations and the human emotions they're meant to evoke.
+                  Through my studies, I’ve worked on projects involving game design, 3D modelling, UI/UX design, animation, and interactive media. 
+                  I like learning both the technical side of development and the creative thinking behind good design, especially how digital experiences can connect with people.
                 </p>
                 <p>
-                  When I'm not coding or designing, you'll find me exploring new gaming experiences, 
-                  sketching character concepts, or experimenting with the latest creative technologies.
+                  Outside of my coursework, I also enjoy art and craft, including acrylic painting and handmade projects. 
+                  These creative hobbies often influence the way I approach design, helping me think more visually and creatively when working on digital projects.
                 </p>
               </div>
             </div>
@@ -109,7 +106,7 @@ const AboutSection = () => {
           {/* Skills */}
           <div className="space-y-12">
             <div className="text-center space-y-4 animate-fade-in">
-              <h3 className="text-3xl font-serif text-primary">Skills & Expertise</h3>
+              <h3 className="text-3xl font-serif text-primary">Skills & Things I am learning</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 A blend of creative and technical skills developed through academic projects and personal exploration
               </p>

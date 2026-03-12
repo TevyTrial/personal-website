@@ -1,10 +1,23 @@
+import gallery1 from "@/assets/gallery/gallery1.png";
+import gallery2 from "@/assets/gallery/gallery2.png";
+import gallery3 from "@/assets/gallery/gallery3.jpg";
+import gallery4 from "@/assets/gallery/gallery4.png";
+import gallery5 from "@/assets/gallery/gallery5.png";
+import gallery6 from "@/assets/gallery/gallery6.png";
+import gallery7 from "@/assets/gallery/gallery7.png";
+import gallery8 from "@/assets/gallery/gallery8.png";
+import gallery9 from "@/assets/gallery/gallery9.png";
+import gallery10 from "@/assets/gallery/gallery10.png";
+import gallery11 from "@/assets/gallery/gallery11.png";
+import gallery12 from "@/assets/gallery/gallery12.png";
+
 const artworks = [
   {
     id: 1,
     title: "Digital Portrait Series",
     category: "Digital Art",
     description: "Expressive digital portraits exploring human emotion through vibrant colors and dynamic brushwork.",
-    image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=600&fit=crop",
+    image: gallery1,
     height: "tall"
   },
   {
@@ -12,7 +25,7 @@ const artworks = [
     title: "Abstract Compositions",
     category: "Graphic Design",
     description: "Geometric abstractions that blend modern design principles with creative experimentation.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+    image: gallery2,
     height: "medium"
   },
   {
@@ -20,7 +33,7 @@ const artworks = [
     title: "Isometric Illustrations",
     category: "Illustration",
     description: "Technical illustrations featuring precise isometric perspectives and detailed architectural elements.",
-    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&h=500&fit=crop",
+    image: gallery3,
     height: "medium"
   },
   {
@@ -28,7 +41,7 @@ const artworks = [
     title: "Logo Collection",
     category: "Branding",
     description: "A curated collection of brand identities showcasing versatile logo design approaches.",
-    image: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
+    image: gallery4,
     height: "short"
   },
   {
@@ -36,7 +49,7 @@ const artworks = [
     title: "3D Character Models",
     category: "3D Art",
     description: "Stylized 3D characters with detailed texturing and expressive poses for interactive media.",
-    image: "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=400&h=650&fit=crop",
+    image: gallery5,
     height: "tall"
   },
   {
@@ -44,7 +57,7 @@ const artworks = [
     title: "Motion Graphics",
     category: "Animation",
     description: "Dynamic motion graphics combining typography, shapes, and fluid animations for digital platforms.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop",
+    image: gallery6,
     height: "medium"
   },
   {
@@ -52,7 +65,7 @@ const artworks = [
     title: "Environmental Concepts",
     category: "Concept Art",
     description: "Imaginative environment designs for fantasy worlds, featuring detailed landscapes and atmospheric lighting.",
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=350&fit=crop",
+    image: gallery7,
     height: "short"
   },
   {
@@ -60,7 +73,7 @@ const artworks = [
     title: "Typography Experiments",
     category: "Typography",
     description: "Experimental typography exploring the intersection of letterforms, texture, and visual hierarchy.",
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=550&fit=crop",
+    image: gallery8,
     height: "medium"
   },
   {
@@ -68,7 +81,7 @@ const artworks = [
     title: "Product Design",
     category: "Industrial Design",
     description: "Minimalist product designs focused on user experience and sustainable materials.",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=450&fit=crop",
+    image: gallery9,
     height: "medium"
   },
   {
@@ -76,8 +89,24 @@ const artworks = [
     title: "Digital Paintings",
     category: "Digital Art",
     description: "Atmospheric digital paintings inspired by nature and contemporary art movements.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=320&fit=crop",
+    image: gallery10,
     height: "short"
+  },
+  {
+    id: 11,
+    title: "Infographic Series",
+    category: "Data Visualization",
+    description: "Informative infographics that visualize complex data through clear design and engaging visuals.",
+    image: gallery11,
+    height: "medium"
+  },
+  {
+    id: 12,
+    title: "Character Concept Art",
+    category: "Concept Art",
+    description: "Character concepts for video games, featuring unique designs and detailed backstories.",
+    image: gallery12,
+    height: "tall"
   }
 ];
 
@@ -118,7 +147,7 @@ const SimpleGallerySection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                   {/* Category Badge */}
                   <div className="mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
-                    <span className="inline-block bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-primary">
+                    <span className="inline-block bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-900">
                       {artwork.category}
                     </span>
                   </div>

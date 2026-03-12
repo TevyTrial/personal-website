@@ -3,6 +3,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import ahrThumbnail from "@/assets/AHR_thumbnail.png";
+import bwdThumbnail from "@/assets/BWD_thumbnail.png";
+import lampStoryThumbnail from "@/assets/Lampstory_thumbnail.png";
+import monopolyThumbnail from "@/assets/Monopoly_thumbnail.png";
+import coffeeWizardThumbnail from "@/assets/CoffeeWizard_thumbnail.png";
+import web3dThumbnail from "@/assets/3dWeb_thumbnail.png";
+import gameBurstThumbnail from "@/assets/GameBurst_thumbnail.png";
+import visualThumbnail from "@/assets/Visual_thumbnail.png";
+import craftInsightThumbnail from "@/assets/CraftInsight_thumbnail.png";
 
 const categories = ["All", "Game Design", "UI/UX Design", "3D & Animation", "Graphic & Logo Design", "Video Editing"];
 
@@ -11,49 +20,73 @@ const projects = [
     id: 1,
     title: "A Hero's Redemption",
     description: "Immersive 3D environment design with detailed texturing and atmospheric lighting for indie game project.",
-    image: "src/assets/AHR_thumbnail.png",
-    tags: ["Game Design", "3D Modelling","UI/UX Design"],
+    image: ahrThumbnail,
+    tags: ["Game Design", "3D & Animation"],
     category: "Game Design"
   },
   {
     id: 2,
     title: "Bloom with Dorcas",
     description: "Bloom with Dorcas is a cozy music farming game that combines plant care guidance with gamification elements to encourage users to nurture their green spaces.",
-    image: "src/assets/BWD_thumbnail.png",
-    tags: ["Game Design", "3D Modelling","UI/UX Design"],
+    image: bwdThumbnail,
+    tags: ["Game Design", "3D & Animation"],
     category: "Game Design"
   },
   {
     id: 3,
     title: "Lamp Story",
-    description: "Complete 3D modeling and animation pipeline featuring character rigs, environmental design, and motion graphics for various media projects.",
-    image: "src/assets/Lampstory_thumbnail.png",
-    tags: ["3D Modelling", "Animation"],
+    description: "30-second character animation in Cinema 4D bringing a desk lamp to life through expressive keyframe animation, rigging, and storyboard-driven storytelling.",
+    image: lampStoryThumbnail,
+    tags: ["3D & Animation"],
     category: "3D & Animation"
   },
   {
     id: 4,
     title: "Property Tycoon",
-    description: "Complete visual identity for tech startup including logo design and comprehensive brand guidelines.",
-    image: "src/assets/Monopoly_thumbnail.png",
-    tags: ["Graphic & Logo Design"],
-    category: "Graphic & Logo Design"
+    description: "Monopoly-inspired strategy game with custom UI design, property management mechanics, and competitive multiplayer decision-making.",
+    image: monopolyThumbnail,
+    tags: ["Game Design", "3D & Animation","Agile methodology"],
+    category: "Game Design"
   },
   {
     id: 5,
     title: "CoffeeWizard",
-    description: "A user-friendly mobile app interface for a coffee delivery service, designed to enhance the user experience and streamline the ordering process.",
-    image: "src/assets/CoffeeWizard_thumbnail.png",
-    tags: ["UI/UX Design", "Graphic Design"],
+    description: "Mobile app UI/UX concept featuring branded logo design, interactive prototypes, and an intuitive user journey for a seamless coffee ordering experience.",
+    image: coffeeWizardThumbnail,
+    tags: ["UI/UX Design", "Graphic & Logo Design"],
     category: "UI/UX Design"
   },
   {
     id: 6,
-    title: "3D Storytelling e-commerce website",
-    description: "Data visualization dashboard for UX research insights focused on user behavior analytics.",
-    image: "src/assets/3dWeb_thumbnail.png",
-    tags: ["UI/UX Design"],
-    category: "UI/UX Design"
+    title: "3D Storytelling e-commerce website (in progress)",
+    description: "Final year project building an interactive browser-based 3D experience using Three.js, bringing handmade characters to life through immersive storytelling and web-based interaction design.",
+    image: web3dThumbnail,
+    tags: ["UI/UX Design", "3D & Animation", "Web Design"],
+    category: "3D & Animation"
+  },
+  {
+    id: 7,
+    title: "GameBurst",
+    description: "Full broadcast graphics package for a live 25-minute multi-camera eSports show, including title sequences, lower thirds, stings, and real-time animation in After Effects and Singular.live.",
+    image: gameBurstThumbnail,
+    tags: ["Animation", "Graphic & Logo Design"],
+    category: "Graphic & Logo Design"
+  },
+  {
+    id: 8,
+    title: "Visual Effects",
+    description: "Multi-assignment VFX showcase exploring camera tracking, compositing, matte acquisition, and 3D integration using Adobe After Effects and Cinema 4D.",
+    image: visualThumbnail,
+    tags: ["Video Editing", "3D & Animation"],
+    category: "3D & Animation"
+  },
+  {
+    id: 9,
+    title: "CraftInsight (in progress)",
+    description: "UX case study for a mobile app that helps crafters discover reliable materials, record product experiences, and read community reviews. Designed through a full UX process using Figma.",
+    image: craftInsightThumbnail,
+    tags: ["Graphic & Logo Design","UI/UX Design"],
+    category: "Graphic & Logo Design"
   }
 ];
 
@@ -134,7 +167,7 @@ const ProjectsSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => handleProjectClick(project.id)}
             >
-              <div className="aspect-[4/3] overflow-hidden flex">
+              <div className="aspect-[3/2] overflow-hidden flex">
                 <img 
                   src={project.image}
                   alt={project.title}

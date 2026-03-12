@@ -60,9 +60,9 @@ const SimpleContactSection = () => {
             <div className="space-y-6">
               <h3 className="text-xl font-serif text-primary">Let's Connect</h3>
               <p className="text-base text-primary leading-relaxed">
-                I'm always excited to work on creative projects and collaborate with like-minded individuals. 
-                Whether you have a project in mind or just want to chat about design and technology, 
-                feel free to reach out.
+                I’m always happy to connect with people who share an interest in design, technology, and creative projects. 
+                As I continue learning and developing my skills, I’m open to opportunities to collaborate, gain experience, and learn from others. 
+                If you’d like to discuss a project or simply share ideas, feel free to reach out!!
               </p>
             </div>
             
@@ -71,7 +71,9 @@ const SimpleContactSection = () => {
               <h4 className="text-lg font-medium text-primary">Find me on</h4>
               <div className="flex items-center gap-4">
                 <a 
-                  href="#" 
+                  href="https://github.com/TevyTrial" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 bg-card rounded-lg shadow-soft hover:shadow-card transition-all duration-300 group"
                 >
                   <Github className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
@@ -79,7 +81,9 @@ const SimpleContactSection = () => {
                 </a>
                 
                 <a 
-                  href="#" 
+                  href="http://www.linkedin.com/in/tevy-ho" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 bg-card rounded-lg shadow-soft hover:shadow-card transition-all duration-300 group"
                 >
                   <Linkedin className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
@@ -87,7 +91,7 @@ const SimpleContactSection = () => {
                 </a>
                 
                 <a 
-                  href="#" 
+                  href="mailto:tevy.cl.ho@gmail.com" 
                   className="flex items-center gap-3 p-3 bg-card rounded-lg shadow-soft hover:shadow-card transition-all duration-300 group"
                 >
                   <Mail className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
@@ -100,7 +104,7 @@ const SimpleContactSection = () => {
             <div className="bg-accent/20 p-6 rounded-lg">
               <h4 className="text-lg font-medium text-primary mb-2">Current Status</h4>
               <p className="text-primary text-sm">
-                Available for internships and part-time projects starting January 2024.
+                Available for internships, part-time projects and grad jobs.
               </p>
             </div>
           </div>
