@@ -46,7 +46,7 @@ const SimpleSkillsSection = () => {
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
-            Skills & Services
+            Skills & Things I am learning
           </h2>
           <p className="text-base text-primary max-w-2xl mx-auto">
             Combining technical expertise with creative vision to deliver 

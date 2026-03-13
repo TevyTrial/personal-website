@@ -5,6 +5,7 @@ import DarkModeToggle from "@/components/DarkModeToggle";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const logoSrc = `${import.meta.env.BASE_URL}Logo.png`;
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -20,8 +21,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo placeholder - left side */}
           <div className="flex-shrink-0">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">L</span>
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+              <img src={logoSrc} alt="Logo" className="w-10 h-10 object-contain rounded-lg" />
             </div>
           </div>
 

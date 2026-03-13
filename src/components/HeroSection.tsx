@@ -48,7 +48,10 @@ const HeroSection = () => {
               <a href="http://www.linkedin.com/in/tevy-ho" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-linkedin">
                 <Linkedin className="h-5 w-5 transition-colors duration-300" />
               </a>
-              <a href="mailto:tevy.cl.ho@gmail.com" className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-mail">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tevy.cl.ho@gmail.com&su=Portfolio%20Inquiry"
+               target="_blank"
+                rel="noopener noreferrer"
+               className="w-10 h-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-primary/90 group social-icon-mail">
                 <Mail className="h-5 w-5 transition-colors duration-300" />
               </a>
             </div>
@@ -59,7 +62,7 @@ const HeroSection = () => {
             <div className="relative w-full max-w-xl mx-auto">
               <img 
                 src={heroImage} 
-                alt="Tevy Ho - Creative Computing Student" 
+                alt="Tevy Ho" 
                 className="w-full h-auto object-cover rounded-lg drawing-reveal-effect" 
               />
             </div>

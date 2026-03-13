@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutSection = () => {
+  const cvUrl = `${import.meta.env.BASE_URL}Tevy-Ho_CV.pdf`;
+
   const skills = [
     {
       icon: Gamepad2,
@@ -26,16 +28,30 @@ const AboutSection = () => {
     }
   ];
 
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/Tevy-Ho_CV.pdf'; 
-    link.download = 'TevyHo_CV.pdf';
-    link.click();
+  const handleDownloadCV = async () => {
+    try {
+      const response = await fetch(cvUrl);
+      if (!response.ok) {
+        throw new Error("Unable to load CV file");
+      }
+
+      const blob = await response.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = "TevyHo_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(objectUrl);
+    } catch (error) {
+      console.error(error);
+      window.open(cvUrl, "_blank");
+    }
   };
 
   const handlePreviewCV = () => {
-    // Open CV in new tab - replace with actual CV file
-    window.open('/Tevy-Ho_CV.pdf', '_blank'); // Replace with actual CV file path
+    window.open(cvUrl, "_blank");
   };
 
   return (
