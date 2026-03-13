@@ -1,6 +1,6 @@
 import gallery1 from "@/assets/gallery/gallery1.png";
 import gallery2 from "@/assets/gallery/gallery2.png";
-import gallery3 from "@/assets/gallery/gallery3.jpg";
+import gallery3 from "@/assets/gallery/gallery3.png";
 import gallery4 from "@/assets/gallery/gallery4.png";
 import gallery5 from "@/assets/gallery/gallery5.png";
 import gallery6 from "@/assets/gallery/gallery6.png";
@@ -14,99 +14,99 @@ import gallery12 from "@/assets/gallery/gallery12.png";
 const artworks = [
   {
     id: 1,
-    title: "Digital Portrait Series",
-    category: "Digital Art",
-    description: "Expressive digital portraits exploring human emotion through vibrant colors and dynamic brushwork.",
+    title: "Brighton Trip Poster",
+    category: "Graphic Design",
+    description: "Poster designed for a church Brighton half-day trip to help new students become familiar with the area. Brighton-themed visual elements were used to attract attention. Created with Canva and Photoshop.",
     image: gallery1,
     height: "tall"
   },
   {
     id: 2,
-    title: "Abstract Compositions",
+    title: "Church Event Leaflet",
     category: "Graphic Design",
-    description: "Geometric abstractions that blend modern design principles with creative experimentation.",
+    description: "Informational leaflet designed for church activities. The layout focuses on clear structure and readability. Created using Canva and Photoshop.",
     image: gallery2,
     height: "medium"
   },
   {
     id: 3,
-    title: "Isometric Illustrations",
-    category: "Illustration",
-    description: "Technical illustrations featuring precise isometric perspectives and detailed architectural elements.",
+    title: "Easter Worship Poster",
+    category: "Graphic Design",
+    description: "Promotional poster created for an Easter worship meeting, using visual elements and typography to communicate the theme of the event.",
     image: gallery3,
     height: "medium"
   },
   {
     id: 4,
-    title: "Logo Collection",
-    category: "Branding",
-    description: "A curated collection of brand identities showcasing versatile logo design approaches.",
+    title: "Seagull Rock Painting",
+    category: "Acrylic Painting",
+    description: "Acrylic painting of a seagull eating chips on a small rock, inspired by Brighton’s seaside culture.",
     image: gallery4,
     height: "short"
   },
   {
     id: 5,
-    title: "3D Character Models",
-    category: "3D Art",
-    description: "Stylized 3D characters with detailed texturing and expressive poses for interactive media.",
+    title: "Owl Couple Rock Painting",
+    category: "Acrylic Painting",
+    description: "Acrylic painting of two owls on a rock, exploring simple character expression and decorative painting.",
     image: gallery5,
-    height: "tall"
+    height: "medium"
   },
   {
     id: 6,
-    title: "Motion Graphics",
-    category: "Animation",
-    description: "Dynamic motion graphics combining typography, shapes, and fluid animations for digital platforms.",
+    title: "Portrait Sketch Study",
+    category: "Sketching",
+    description: "Hand-drawn portrait sketch used as practice for studying facial proportions and expression.",
     image: gallery6,
     height: "medium"
   },
   {
     id: 7,
-    title: "Environmental Concepts",
-    category: "Concept Art",
-    description: "Imaginative environment designs for fantasy worlds, featuring detailed landscapes and atmospheric lighting.",
+    title: "Hand Embroidery Piece",
+    category: "Embroidery",
+    description: "A small embroidery craft project exploring stitching techniques and textile-based decoration.",
     image: gallery7,
     height: "short"
   },
   {
     id: 8,
-    title: "Typography Experiments",
-    category: "Typography",
-    description: "Experimental typography exploring the intersection of letterforms, texture, and visual hierarchy.",
+    title: "Titan Head (Attack on Titan)",
+    category: "Mixed Media",
+    description: "A Titan head sculpture inspired by Attack on Titan, created using 3D printing, clay for structural filling, and acrylic paint for surface details.",
     image: gallery8,
     height: "medium"
   },
   {
     id: 9,
-    title: "Product Design",
-    category: "Industrial Design",
-    description: "Minimalist product designs focused on user experience and sustainable materials.",
+    title: "Otter Pancake Plush",
+    category: "Crochet",
+    description: "A handmade crochet plush designed as a cute otter pancake character, exploring soft toy crafting.",
     image: gallery9,
     height: "medium"
   },
   {
     id: 10,
-    title: "Digital Paintings",
-    category: "Digital Art",
-    description: "Atmospheric digital paintings inspired by nature and contemporary art movements.",
+    title: "Snowman Crystal Ball",
+    category: "Upcycled Craft",
+    description: "An upcycled salt and pepper shaker turned into a miniature snow globe. Clay, small decorations, and twisting sticks were used to create the snowman scene.",
     image: gallery10,
-    height: "short"
+    height: "medium"
   },
   {
     id: 11,
-    title: "Infographic Series",
-    category: "Data Visualization",
-    description: "Informative infographics that visualize complex data through clear design and engaging visuals.",
+    title: "Painting on Guitar",
+    category: "Acrylic Painting",
+    description: "Acrylic painting created on a guitar surface, experimenting with painting on non-traditional materials.",
     image: gallery11,
     height: "medium"
   },
   {
     id: 12,
-    title: "Character Concept Art",
-    category: "Concept Art",
-    description: "Character concepts for video games, featuring unique designs and detailed backstories.",
+    title: "Mushroom Lip Balm Holder",
+    category: "Crochet",
+    description: "A small crochet mushroom designed to hold lip balm, combining decorative craft with everyday functionality.",
     image: gallery12,
-    height: "tall"
+    height: "short"
   }
 ];
 
