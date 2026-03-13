@@ -182,7 +182,7 @@ const SimpleContactSection = () => {
                   className="flex items-center gap-3 p-3 bg-card rounded-lg shadow-soft hover:shadow-card transition-all duration-300 group"
                 >
                   <Mail className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                  <span className="text-primary">Open Gmail</span>
+                  <span className="text-primary">Email</span>
                 </a>
               </div>
             </div>
