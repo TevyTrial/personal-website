@@ -9,22 +9,42 @@ const AboutSection = () => {
     {
       icon: Gamepad2,
       title: "Game Design",
-      description: "Creating engaging game mechanics and player experiences!"
+      description: "Creating engaging game mechanics and player experiences!",
+      cardHoverClass: "hover:border-[hsl(var(--aqua)/0.5)] hover:shadow-[0_10px_30px_-12px_hsl(var(--aqua)/0.35)]",
+      titleHoverClass: "hover-aqua",
+      iconBgClass: "bg-[hsl(var(--aqua)/0.12)]",
+      iconHoverBgClass: "group-hover:bg-[hsl(var(--aqua)/0.2)]",
+      iconTextClass: "text-aqua"
     },
     {
       icon: Palette,
       title: "UI/UX Design", 
-      description: "Crafting intuitive, easy-to-use and beautiful user interfaces."
+      description: "Crafting intuitive, easy-to-use and beautiful user interfaces.",
+      cardHoverClass: "hover:border-[hsl(var(--olive)/0.5)] hover:shadow-[0_10px_30px_-12px_hsl(var(--olive)/0.35)]",
+      titleHoverClass: "hover-olive",
+      iconBgClass: "bg-[hsl(var(--olive)/0.12)]",
+      iconHoverBgClass: "group-hover:bg-[hsl(var(--olive)/0.2)]",
+      iconTextClass: "text-olive"
     },
     {
       icon: Code,
       title: "3D Modeling",
-      description: "Building detailed or cute 3D assets and environments."
+      description: "Building detailed or cute 3D assets and environments.",
+      cardHoverClass: "hover:border-[hsl(var(--golden)/0.5)] hover:shadow-[0_10px_30px_-12px_hsl(var(--golden)/0.35)]",
+      titleHoverClass: "hover-golden",
+      iconBgClass: "bg-[hsl(var(--golden)/0.12)]",
+      iconHoverBgClass: "group-hover:bg-[hsl(var(--golden)/0.2)]",
+      iconTextClass: "text-golden"
     },
     {
       icon: Video,
       title: "Animation",
-      description: "Bringing characters and scenes to life through motion."
+      description: "Bringing characters and scenes to life through motion.",
+      cardHoverClass: "hover:border-[hsl(var(--orange)/0.5)] hover:shadow-[0_10px_30px_-12px_hsl(var(--orange)/0.35)]",
+      titleHoverClass: "hover-orange",
+      iconBgClass: "bg-[hsl(var(--orange)/0.12)]",
+      iconHoverBgClass: "group-hover:bg-[hsl(var(--orange)/0.2)]",
+      iconTextClass: "text-orange"
     }
   ];
 
@@ -134,15 +154,17 @@ const AboutSection = () => {
                 return (
                   <Card 
                     key={skill.title} 
-                    className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-scale-in"
+                    className={`group border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-scale-in ${skill.cardHoverClass}`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <CardContent className="p-6 space-y-4">
                       <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <Icon className="h-6 w-6 text-primary" />
+                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-colors ${skill.iconBgClass} ${skill.iconHoverBgClass}`}>
+                          <Icon className={`h-6 w-6 ${skill.iconTextClass}`} />
                         </div>
-                        <h4 className="font-semibold text-primary">{skill.title}</h4>
+                        <h4 className={`font-semibold text-primary transition-colors duration-300 ${skill.titleHoverClass}`}>
+                          {skill.title}
+                        </h4>
                       </div>
                       
                       <p className="text-sm text-muted-foreground leading-relaxed">
