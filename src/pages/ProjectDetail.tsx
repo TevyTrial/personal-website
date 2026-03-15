@@ -90,7 +90,7 @@ const projectData = {
     duration: "10 months",
     role: "Environment Artist & Designer",
     videoUrl: "https://youtu.be/1lPwvhXLD8s?si=F9fiCA_3-EOD5SWk",
-    codeRepo: "https://github.com/vibecoding/a-heros-redemption"
+    codeRepo: "https://github.com/vvlolicon/software_asm_project"
   },
 
   2: {
