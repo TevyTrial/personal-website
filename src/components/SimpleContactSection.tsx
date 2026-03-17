@@ -88,7 +88,7 @@ const SimpleContactSection = () => {
                     name="name"
                     value={name}
                     onChange={(event) => setName(event.target.value)}
-                    placeholder="Your name" 
+                    placeholder="Your name :)" 
                     className="border-primary/20 focus:border-primary"
                     required
                   />
@@ -113,7 +113,7 @@ const SimpleContactSection = () => {
                     name="message"
                     value={message}
                     onChange={(event) => setMessage(event.target.value)}
-                    placeholder="Tell me about your project..." 
+                    placeholder="Tell me anything! I’d love to hear from you." 
                     className="border-primary/20 focus:border-primary min-h-[120px]"
                     required
                   />
