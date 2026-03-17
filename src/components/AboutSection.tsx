@@ -100,7 +100,7 @@ const AboutSection = () => {
                   I like learning both the technical side of development and the creative thinking behind good design, especially how digital experiences can connect with people.
                 </p>
                 <p>
-                  Outside of my coursework, I also enjoy art and craft, including acrylic painting and handmade projects. 
+                  Outside of my coursework, I also enjoy art and craft, including painting and handmade projects. 
                   These creative hobbies often influence the way I approach design, helping me think more visually and creatively when working on digital projects.
                 </p>
               </div>
@@ -113,7 +113,7 @@ const AboutSection = () => {
                   <div className="text-center space-y-2">
                     <h4 className="text-2xl font-serif text-primary">Curriculum Vitae</h4>
                     <p className="text-muted-foreground">
-                      Download or preview my complete professional profile
+                      Download or preview my complete profile!
                     </p>
                   </div>
                   
