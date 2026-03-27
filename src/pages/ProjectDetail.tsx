@@ -11,6 +11,8 @@ import AHR2 from "@/assets/projects/AHR/AHR2.png";
 import AHR3 from "@/assets/projects/AHR/AHR3.png";
 import AHR4 from "@/assets/projects/AHR/AHR4.png";
 import AHR5 from "@/assets/projects/AHR/AHR5.png";
+import AHR6 from "@/assets/projects/AHR/AHR6.png";
+import AHR7 from "@/assets/projects/AHR/AHR7.png";
 
 import BWD1 from "@/assets/projects/BWD/BWD1.png";
 import BWD2 from "@/assets/projects/BWD/BWD2.png";
@@ -84,7 +86,7 @@ const projectData = {
     category: "Game Design",
     description: "Rogue-like action RPG built in a team of 5 using Unity, where I led all environment building, contributed to UI design, and assisted in level design coding to create an immersive multi-level dungeon experience.",
     fullDescription: "It features fast-paced combat, 2 levels progression-based gameplay, and hidden secrets to explore. To survive, players must collect loot from treasure chests and equip better weapons and armor to restore the hero's strength. The dungeon also has hidden secrets for players to discover. With AI enemies that adapt to player strategies, the game offers a challenging and rewarding experience for fans of the rogue-like genre.",
-    images: [AHR1, AHR2, AHR3, AHR4, AHR5],
+    images: [AHR1, AHR2, AHR3, AHR4, AHR5, AHR6, AHR7],
     tags: ["Game Design", "3D Modelling","UI/UX Design"],
     tools: ["Unity", "C#"],
     duration: "10 months",
