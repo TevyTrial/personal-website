@@ -48,30 +48,19 @@ const AboutSection = () => {
     }
   ];
 
-  const handleDownloadCV = async () => {
-    try {
-      const response = await fetch(cvUrl);
-      if (!response.ok) {
-        throw new Error("Unable to load CV file");
-      }
-
-      const blob = await response.blob();
-      const objectUrl = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = objectUrl;
-      link.download = "TevyHo_CV.pdf";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(objectUrl);
-    } catch (error) {
-      console.error(error);
-      window.open(cvUrl, "_blank");
-    }
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = cvUrl;
+    link.download = "TevyHo_CV.pdf";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   };
 
   const handlePreviewCV = () => {
-    window.open(cvUrl, "_blank");
+    window.open(cvUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
