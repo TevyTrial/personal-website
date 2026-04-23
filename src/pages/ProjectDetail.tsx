@@ -74,14 +74,19 @@ import VFX8 from "@/assets/projects/VFX/VFX8.png";
 import FYP1 from "@/assets/projects/FYP/FYP1.mp4";
 import FYP2 from "@/assets/projects/FYP/FYP2.mp4";
 import FYP3 from "@/assets/projects/FYP/FYP3.png";
-import FYP4 from "@/assets/projects/FYP/FYP4.png";
 import FYP5 from "@/assets/projects/FYP/FYP5.png";
+import FYP6 from "@/assets/projects/FYP/FYP6.png";
+import FYP7 from "@/assets/projects/FYP/FYP7.png";
+import FYP8 from "@/assets/projects/FYP/FYP8.png";
+import FYP9 from "@/assets/projects/FYP/FYP9.png";
+import FYP10 from "@/assets/projects/FYP/FYP10.png";
+import FYP11 from "@/assets/projects/FYP/FYP11.png";
 
 // #endregion
 
 
 const projectData = {
-  1: {
+  3: {
     title: "A Hero's Redemption",
     category: "Game Design",
     description: "Rogue-like action RPG built in a team of 5 using Unity, where I led all environment building, contributed to UI design, and assisted in level design coding to create an immersive multi-level dungeon experience.",
@@ -110,7 +115,7 @@ const projectData = {
     videoUrl: "https://youtu.be/PNwZzf_AkXY?si=IW8M5osAHhRyIluE",
     codeRepo: "https://github.com/TevyTrial/Bloom-With-Dorcas.git"
   },
-  3: {
+  6: {
     title: "Lamp Story",
     category: "3D & Animation",
     description: "Solo Cinema 4D animation project where I modelled, rigged, and animated a expressive desk lamp from scratch, planning the entire sequence through hand-drawn storyboards to bring the character to life through movement.",
@@ -149,13 +154,13 @@ const projectData = {
     videoUrl: undefined,
     codeRepo: undefined
   },
-  6: {
+  1: {
     title: "3D Storytelling e-commerce website",
     category: "UI/UX Design",
-    description: "Solo final year project building an interactive browser-based 3D experience using Three.js, with original characters sculpted in Nomad Sculpt and modelled for the web, combining 3D storytelling and UX design to bring a series of handmade sheep dolls to life digitally.",
+    description: "Solo final year project building an interactive browser-based 3D experience using Three.js, with original characters sculpted in Nomad Sculpt and modelled for the web, combining 3D storytelling and UX design to bring a series of handmade sheep dolls to life digitally." + "\n\nLive demo: https://tevytrial.github.io/3DWebsite/",
     fullDescription: "This project is my Final Year Project, where I am developing a playable and interactive 3D storytelling website inspired by a series of handmade sheep dolls. The aim of the project is to bring these characters to life in a digital space, allowing visitors to explore the story and interact with the characters in a more engaging way than a traditional website. The dolls are used as references for creating 3D models, helping to preserve their handmade charm while translating them into a digital environment."+
     "\n\nThe website is currently being developed using Three.js to create interactive 3D scenes directly in the browser. Users will be able to explore the environment, interact with characters, and experience the story through visual elements and small interactive moments. This project combines my interests in 3D modelling, storytelling, and user experience design, and explores how web technology can be used to create immersive and meaningful digital experiences. The project is currently in progress, with ongoing work on 3D assets, interaction design. ",
-    images: [FYP1, FYP2, FYP3, FYP4, FYP5],
+    images: [FYP1, FYP2, FYP3, FYP5, FYP6, FYP7, FYP8, FYP9, FYP10, FYP11],
     tags: ["UI/UX Design", "Data Visualization"],
     tools: ["Blender","Three.js"],
     duration: "Ongoing",

@@ -18,11 +18,11 @@ const categories = ["All", "Game Design", "UI/UX Design", "3D & Animation", "Gra
 const projects = [
   {
     id: 1,
-    title: "A Hero's Redemption",
-    description: "Immersive 3D environment design with detailed texturing and atmospheric lighting for indie game project.",
-    image: ahrThumbnail,
-    tags: ["Game Design", "3D & Animation"],
-    category: "Game Design"
+    title: "3D Storytelling e-commerce website (in progress)",
+    description: "Final year project building an interactive browser-based 3D experience using Three.js, bringing handmade characters to life through immersive storytelling and web-based interaction design.",
+    image: web3dThumbnail,
+    tags: ["UI/UX Design", "3D & Animation", "Web Design"],
+    category: "3D & Animation"
   },
   {
     id: 2,
@@ -34,11 +34,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "Lamp Story",
-    description: "30-second character animation in Cinema 4D bringing a desk lamp to life through expressive keyframe animation, rigging, and storyboard-driven storytelling.",
-    image: lampStoryThumbnail,
-    tags: ["3D & Animation"],
-    category: "3D & Animation"
+    title: "A Hero's Redemption",
+    description: "Immersive 3D environment design with detailed texturing and atmospheric lighting for indie game project.",
+    image: ahrThumbnail,
+    tags: ["Game Design", "3D & Animation"],
+    category: "Game Design"
   },
   {
     id: 4,
@@ -58,10 +58,10 @@ const projects = [
   },
   {
     id: 6,
-    title: "3D Storytelling e-commerce website (in progress)",
-    description: "Final year project building an interactive browser-based 3D experience using Three.js, bringing handmade characters to life through immersive storytelling and web-based interaction design.",
-    image: web3dThumbnail,
-    tags: ["UI/UX Design", "3D & Animation", "Web Design"],
+    title: "Lamp Story",
+    description: "30-second character animation in Cinema 4D bringing a desk lamp to life through expressive keyframe animation, rigging, and storyboard-driven storytelling.",
+    image: lampStoryThumbnail,
+    tags: ["3D & Animation"],
     category: "3D & Animation"
   },
   {

@@ -1,4 +1,4 @@
-import { Download, Eye, Code, Palette, Video, Gamepad2 } from "lucide-react";
+import { Download, Eye, Code, Palette, Gamepad2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -35,16 +35,6 @@ const AboutSection = () => {
       iconBgClass: "bg-[hsl(var(--golden)/0.12)]",
       iconHoverBgClass: "group-hover:bg-[hsl(var(--golden)/0.2)]",
       iconTextClass: "text-golden"
-    },
-    {
-      icon: Video,
-      title: "Animation",
-      description: "Bringing characters and scenes to life through motion.",
-      cardHoverClass: "hover:border-[hsl(var(--orange)/0.5)] hover:shadow-[0_10px_30px_-12px_hsl(var(--orange)/0.35)]",
-      titleHoverClass: "hover-orange",
-      iconBgClass: "bg-[hsl(var(--orange)/0.12)]",
-      iconHoverBgClass: "group-hover:bg-[hsl(var(--orange)/0.2)]",
-      iconTextClass: "text-orange"
     }
   ];
 
@@ -137,7 +127,7 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skills.map((skill, index) => {
                 const Icon = skill.icon;
                 return (
