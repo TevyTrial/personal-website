@@ -12,13 +12,15 @@ import web3dThumbnail from "@/assets/3dWeb_thumbnail.png";
 import gameBurstThumbnail from "@/assets/GameBurst_thumbnail.png";
 import visualThumbnail from "@/assets/Visual_thumbnail.png";
 import craftInsightThumbnail from "@/assets/CraftInsight_thumbnail.png";
+import medbuddyThumbnail from "@/assets/MedBuddy_thumbnail.png";
+import hkThumbnail from "@/assets/HK_thumbnail.png";
 
 const categories = ["All", "Game Design", "UI/UX Design", "3D & Animation", "Graphic & Logo Design", "Video Editing"];
 
 const projects = [
   {
     id: 1,
-    title: "3D Storytelling e-commerce website (in progress)",
+    title: "3D Storytelling e-commerce website",
     description: "Final year project building an interactive browser-based 3D experience using Three.js, bringing handmade characters to life through immersive storytelling and web-based interaction design.",
     image: web3dThumbnail,
     tags: ["UI/UX Design", "3D & Animation", "Web Design"],
@@ -58,11 +60,11 @@ const projects = [
   },
   {
     id: 6,
-    title: "Lamp Story",
-    description: "30-second character animation in Cinema 4D bringing a desk lamp to life through expressive keyframe animation, rigging, and storyboard-driven storytelling.",
-    image: lampStoryThumbnail,
-    tags: ["3D & Animation"],
-    category: "3D & Animation"
+    title: "HK Bites 3D",
+    description: "An interactive Web 3D experience showcasing iconic Hong Kong street food through real-time 3D models and animations.",
+    image: hkThumbnail,
+    tags: ["UI/UX Design"],
+    category: "UI/UX Design"
   },
   {
     id: 7,
@@ -74,11 +76,11 @@ const projects = [
   },
   {
     id: 8,
-    title: "Visual Effects",
-    description: "Multi-assignment VFX showcase exploring camera tracking, compositing, matte acquisition, and 3D integration using Adobe After Effects and Cinema 4D.",
-    image: visualThumbnail,
-    tags: ["Video Editing", "3D & Animation"],
-    category: "3D & Animation"
+    title: "MedBuddy",
+    description: "A mobile learning app prototype designed to improve medical literacy and symptom communication through interactive lessons, AI-supported speaking practice, quizzes, and gamified learning.",
+    image: medbuddyThumbnail,
+    tags: ["Mobile App", "UI/UX Design", "Educational Technology"],
+    category: "UI/UX Design"
   },
   {
     id: 9,
@@ -87,6 +89,22 @@ const projects = [
     image: craftInsightThumbnail,
     tags: ["Graphic & Logo Design","UI/UX Design"],
     category: "Graphic & Logo Design"
+  },
+  {
+    id: 10,
+    title: "Visual Effects",
+    description: "Multi-assignment VFX showcase exploring camera tracking, compositing, matte acquisition, and 3D integration using Adobe After Effects and Cinema 4D.",
+    image: visualThumbnail,
+    tags: ["Video Editing", "3D & Animation"],
+    category: "3D & Animation"
+  },
+  {
+    id: 11,
+    title: "Lamp Story",
+    description: "30-second character animation in Cinema 4D bringing a desk lamp to life through expressive keyframe animation, rigging, and storyboard-driven storytelling.",
+    image: lampStoryThumbnail,
+    tags: ["3D & Animation"],
+    category: "3D & Animation"
   }
 ];
 

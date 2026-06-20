@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,6 +27,7 @@ import lamp5 from "@/assets/projects/lamp/lamp5.jpg";
 import lamp7 from "@/assets/projects/lamp/lamp7.png";
 import lamp8 from "@/assets/projects/lamp/lamp8.png";
 import lamp9 from "@/assets/projects/lamp/lamp9.png";
+import lamp from "@/assets/projects/lamp/lamp.png";
 
 import PT1 from "@/assets/Monopoly_thumbnail.png";
 import PT2 from "@/assets/projects/PT/PT2.png";
@@ -82,10 +83,30 @@ import FYP9 from "@/assets/projects/FYP/FYP9.png";
 import FYP10 from "@/assets/projects/FYP/FYP10.png";
 import FYP11 from "@/assets/projects/FYP/FYP11.png";
 
+import MB1 from "@/assets/projects/MB/MB1.mp4";
+import MB2 from "@/assets/projects/MB/MB2.jpg";
+
+import HK1 from "@/assets/projects/HK/HK1.png";
+
 // #endregion
 
 
-const projectData = {
+type ProjectInfo = {
+  title: string;
+  category: string;
+  description: string;
+  fullDescription: string;
+  images: string[];
+  tags: string[];
+  tools: string[];
+  duration: string;
+  role: string;
+  videoUrl?: string;
+  codeRepo?: string;
+  liveDemoUrl?: string;
+};
+
+const projectData: Record<number, ProjectInfo> = {
   3: {
     title: "A Hero's Redemption",
     category: "Game Design",
@@ -111,16 +132,16 @@ const projectData = {
     tags: ["Game Design", "3D Modelling","UI/UX Design"],
     tools: ["Unity", "Figma","Canva", "C#","Suno.ai"],
     duration: "6 months",
-    role: "All-round Designer",
+    role: "Game Designer, UI/UX Designer",
     videoUrl: "https://youtu.be/PNwZzf_AkXY?si=IW8M5osAHhRyIluE",
     codeRepo: "https://github.com/TevyTrial/Bloom-With-Dorcas.git"
   },
-  6: {
+  11: {
     title: "Lamp Story",
     category: "3D & Animation",
     description: "Solo Cinema 4D animation project where I modelled, rigged, and animated a expressive desk lamp from scratch, planning the entire sequence through hand-drawn storyboards to bring the character to life through movement.",
     fullDescription: "Lamp Story is a short 30-second animation created using Cinema 4D. In this project, I modelled a desk lamp inspired by real-life references and rigged it so it could move in a character-like way. As this was my first time using Cinema 4D, the project helped me understand the basics of keyframe animation, timing, and simple rig controls. The goal was to make the lamp feel expressive and alive through movement, even without dialogue or complex characters. By planning the animation with a storyboard, I was able to organise the sequence of actions and create a clear flow for the final animation. ",
-    images: [lamp9, lamp2, lamp3, lamp4, lamp5, lamp7, lamp8],
+    images: [lamp9,lamp, lamp2, lamp3, lamp4, lamp5, lamp7, lamp8],
     tags: ["Animation", "Video Editing"],
     tools: ["After Effects", "Premiere Pro", "Cinema 4D", "Illustrator"],
     duration: "2 months",
@@ -157,16 +178,17 @@ const projectData = {
   1: {
     title: "3D Storytelling e-commerce website",
     category: "UI/UX Design",
-    description: "Solo final year project building an interactive browser-based 3D experience using Three.js, with original characters sculpted in Nomad Sculpt and modelled for the web, combining 3D storytelling and UX design to bring a series of handmade sheep dolls to life digitally." + "\n\nLive demo: https://tevytrial.github.io/3DWebsite/",
+    description: "Solo final year project building an interactive browser-based 3D experience using Three.js, with original characters sculpted in Nomad Sculpt and modelled for the web, combining 3D storytelling and UX design to bring a series of handmade sheep dolls to life digitally.",
     fullDescription: "This project is my Final Year Project, where I am developing a playable and interactive 3D storytelling website inspired by a series of handmade sheep dolls. The aim of the project is to bring these characters to life in a digital space, allowing visitors to explore the story and interact with the characters in a more engaging way than a traditional website. The dolls are used as references for creating 3D models, helping to preserve their handmade charm while translating them into a digital environment."+
     "\n\nThe website is currently being developed using Three.js to create interactive 3D scenes directly in the browser. Users will be able to explore the environment, interact with characters, and experience the story through visual elements and small interactive moments. This project combines my interests in 3D modelling, storytelling, and user experience design, and explores how web technology can be used to create immersive and meaningful digital experiences. The project is currently in progress, with ongoing work on 3D assets, interaction design. ",
     images: [FYP1, FYP2, FYP3, FYP5, FYP6, FYP7, FYP8, FYP9, FYP10, FYP11],
-    tags: ["UI/UX Design", "Data Visualization"],
+    tags: ["UI/UX Design", "3D Modelling", "Web Design"],
     tools: ["Blender","Three.js"],
-    duration: "Ongoing",
+    duration: "9 months",
     role: "3D modeller, Programmer, UX Designer",
     videoUrl: undefined,
-    codeRepo: "https://github.com/TevyTrial/3DPortfolioWebsite"
+    codeRepo: "https://github.com/TevyTrial/3DPortfolioWebsite",
+    liveDemoUrl: "https://tevytrial.github.io/3DWebsite/"
   },  
   7: {
     title: "GameBurst",
@@ -181,7 +203,7 @@ const projectData = {
     videoUrl: undefined,
     codeRepo: undefined
   },
-  8: {
+  10: {
     title: "Visual Effects",
     category: "Video Editing",
     description: "Solo VFX module exploring how real footage and computer-generated elements combine, using Adobe After Effects and Cinema 4D to develop practical skills in compositing, camera tracking, and matte acquisition across three assignments.",
@@ -208,7 +230,36 @@ const projectData = {
     role: "UI/UX Designer",
     videoUrl: undefined,
     codeRepo: undefined
+  },
+  8: {
+    title: "MedBuddy",
+    category: "UI/UX Design",
+    description: "A Technology Enhanced Learning Environment (TELE) designed to help users understand basic medical knowledge and communicate symptoms more confidently through interactive learning and AI-supported practice.",
+    fullDescription: "MedBuddy is a mobile learning application prototype developed as part of a Technology Enhanced Learning Environment (TELE) project. The aim of the project was to improve medical literacy for users without formal medical training, particularly international users and young adults who may struggle to understand or explain symptoms in English.\n\nThe project followed a user-centred design process, including user research, persona development, storyboarding, wireframing, prototyping, and iterative feedback. Learning theories such as Cognitivism, Constructivism, Behaviourism, and Self-Determination Theory informed the design decisions.\n\nThe final prototype includes five key features: Learn, Quiz, Speak, Profile, and Home. Users can explore symptoms, organs, and body systems through bite-sized lessons, reinforce learning through interactive quizzes, and practise symptom communication using an AI-supported speaking tool that provides feedback and improved phrasing. Gamification elements such as XP, achievements, and avatar customisation were introduced to encourage motivation and long-term engagement.\n\nThis project strengthened my skills in UX research, interaction design, educational technology, wireframing, prototyping, and designing user-centred learning experiences.",
+    images: [MB1, MB2],
+    tags: ["UI/UX Design", "Educational Technology", "Figma", "User Research"],
+    tools: ["Figma", "Adobe Illustrator", "AI tools"],
+    duration: "6 months",
+    role: "UX/UI Designer & Researcher",
+    videoUrl: undefined,
+    codeRepo: undefined,
+    liveDemoUrl: "https://www.figma.com/proto/cgVJWSKqhKHkf2jzlhdfvg/Healtec---Medical-Appointment-Mobile-App-Design--Community-?node-id=2602-3&t=B7r3vkfxoy5KPmGb-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2623%3A20&show-proto-sidebar=1"
+  },
+  6: {
+    title: "HK Bites 3D",
+    category: "Web 3D Development",
+    description: "An interactive Web 3D experience showcasing iconic Hong Kong street food through real-time 3D models and animations.",
+    fullDescription: "HK Bites 3D is an interactive Web 3D application developed using Three.js, Blender, HTML5, CSS3, and JavaScript. The project showcases three iconic Hong Kong foods: egg waffle, egg tart, and Hong Kong-style milk tea. Users can switch between models, trigger unique animations, explore different camera views, and enable wireframe rendering to examine the 3D geometry. The project combines cultural storytelling with modern web technologies while focusing on performance, usability, and responsive design. Additional features include dynamic lighting controls, sound effects edited in Adobe Audition, image-based texturing with UV unwrapping, and interactive model presentation designed for both desktop and mobile devices.",
+    images: [HK1],
+    tags: ["Web 3D", "3D Modeling", "UI/UX Design"],
+    tools: ["Three.js", "Blender", "Bootstrap", "Adobe Audition"],
+    duration: "6 months",
+    role: "Web 3D Developer & 3D Modeler",
+    videoUrl: undefined,
+    codeRepo: "https://github.com/TevyTrial/HongKongStreetFood3d",
+    liveDemoUrl: "https://users.sussex.ac.uk/~clh49/Web3D/index.html"
   }
+
 };
 
 const getYouTubeEmbedUrl = (url: string) => {
@@ -244,6 +295,9 @@ const ProjectDetail = () => {
     navigate("/");
   };
 
+  const galleryImages =
+    project.title === "Lamp Story" ? project.images.slice(2) : project.images.slice(1);
+
   if (!project) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -278,6 +332,17 @@ const ProjectDetail = () => {
           <p className="text-lg text-primary leading-relaxed mb-8">
             {project.description}
           </p>
+
+          {project.liveDemoUrl && (
+            <div className="mb-8">
+              <Button asChild variant="outline" className="px-6 py-3">
+                <a href={project.liveDemoUrl} target="_blank" rel="noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Live Demo
+                </a>
+              </Button>
+            </div>
+          )}
 
           {/* Project Details */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -324,6 +389,27 @@ const ProjectDetail = () => {
           )}
         </div>
 
+        {project.title === "Lamp Story" && project.images[1] && (
+          <div className="aspect-[968/303] rounded-lg overflow-hidden shadow-soft mb-8">
+            {isVideoFile(project.images[1]) ? (
+              <video
+                src={project.images[1]}
+                className="w-full h-full object-cover"
+                controls
+                muted
+                playsInline
+                preload="metadata"
+              />
+            ) : (
+              <img
+                src={project.images[1]}
+                alt={`${project.title} storyboard`}
+                className="w-full h-full object-cover"
+              />
+            )}
+          </div>
+        )}
+
 <Card className="bg-card border-0 shadow-soft mb-8">
   <CardContent className="p-8">
     <h2 className="text-2xl font-serif text-primary mb-6">Project Overview</h2>
@@ -353,7 +439,7 @@ const ProjectDetail = () => {
 </Card>
         {/* Additional Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {project.images.slice(1).map((image, index) => (
+          {galleryImages.map((image, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-soft">
               {isVideoFile(image) ? (
                 <video 

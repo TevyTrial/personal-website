@@ -28,7 +28,7 @@ const HeroSection = () => {
                   Hi! I am Tevy Ho.
                 </h4>
                 <p className="text-lg text-primary leading-relaxed max-w-md">
-                  I'm a Third-year student, major in Computing for Digital Media and Games BSc (Hons) at University of Sussex.
+                  I'm a Creative technologist, interested in combining creativity and technology to create engaging digital experiences.
                 </p>
                 <p className="text-lg text-primary leading-relaxed max-w-md">
                   Based in{" "}

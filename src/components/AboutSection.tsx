@@ -71,16 +71,23 @@ const AboutSection = () => {
               <h3 className="text-3xl font-serif text-primary">My Story</h3>
               <div className="space-y-4 text-foreground leading-relaxed">
                 <p>
-                  I’m a third-year Computing for Digital Media and Games student at the University of Sussex, with a strong interest in how technology and creativity can come together. 
-                  I enjoy exploring different ways digital tools can be used to create meaningful and engaging experiences.
+                  I'm a First Class graduate in Computing for Digital Media and Games from the University of Sussex, 
+                  with a strong interest in the intersection of technology, creativity and user experience.
                 </p>
                 <p>
-                  Through my studies, I’ve worked on projects involving game design, 3D modelling, UI/UX design, animation, and interactive media. 
-                  I like learning both the technical side of development and the creative thinking behind good design, especially how digital experiences can connect with people.
+                  Throughout my degree, I developed experience across a range of creative and technical disciplines,
+                  including UI/UX design, web development, 3D modelling, game design, animation and interactive media. 
+                  I enjoy combining problem-solving with creative thinking to design engaging digital experiences that are both functional and meaningful.
                 </p>
                 <p>
-                  Outside of my coursework, I also enjoy art and craft, including painting and handmade projects. 
-                  These creative hobbies often influence the way I approach design, helping me think more visually and creatively when working on digital projects.
+                  Alongside my technical interests, I have a passion for hands-on making and creative projects. 
+                  In my spare time, I enjoy arts and crafts, painting, crochet, 3D printing and other forms of creative making. 
+                  These experiences have strengthened my attention to detail, visual communication skills and design thinking, 
+                  while giving me a broader perspective on how ideas can be developed from concept to finished product.
+                </p>
+                <p>
+                  I am particularly interested in opportunities that combine creativity, technology and education, 
+                  and I am always keen to learn new skills, collaborate with others and contribute to projects that make a positive impact!!
                 </p>
               </div>
             </div>
